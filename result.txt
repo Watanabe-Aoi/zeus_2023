@@ -1,0 +1,45 @@
+1-1:"PHP"is on 5 (4) in "PHPはPHP:Hypertext Preprocessorの略です".
+
+1-2:(四捨五入あり) 弘前 の気温は 1.5e+1 ℃です。   (四捨五入なし) 弘前 の気温は 15.1 ℃です。
+
+1-3:Wings Knowledge
+
+1-4:私の名前は凛生です。
+
+1-5:false
+
+2-1:Array
+(
+    [0] =>  高江 
+    [1] =>  青木 
+    [2] =>  片淵 
+    [3] => 山田
+    [4] => 日尾
+)
+
+2-2:Array
+(
+    [0] => 掛谷
+    [1] => 土井
+    [2] =>  高江 
+    [3] =>  青木 
+    [4] =>  片淵 
+    [5] => 山田
+    [6] => 日尾
+)
+
+2-3:Array
+(
+    [2] =>  高江 
+    [3] =>  青木 
+    [4] =>  片淵 
+)
+
+3:https://www.wings.msn.to<br/>https://www.wings.msn.to/index.php/-/A-11<br/>https://www.wings.msn.to/index.php/-/A-03/978-4-7981-6364-2<br/>
+
+4-1:12
+
+4-2:12
+
+4-3:this is "x":x
+after unset(err): 
