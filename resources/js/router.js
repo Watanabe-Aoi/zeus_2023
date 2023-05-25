@@ -1,3 +1,5 @@
+import VueRouter from 'vue-router';
+
 import ExampleComponent from './components/ExampleComponent';
 
 const routes = [
