@@ -1,4 +1,5 @@
 <template>
+    <header class="Header"></header>
     <div class="container">
         <th>新規図書登録</th>
             <tr><th>ISBN:</th><td><input type="text" v-model="isbn"></td>例：ISBN1-2345-6789-X</tr>
@@ -10,11 +11,15 @@
             <tr><th>キーワード:</th><td><input type="text" v-model="keyword"></td></tr>
             <tr><th>備考:</th><td><input type="text" v-model="remarks"></td></tr>
             ・印の項目は必ず入力してください。
-            <button @click="insertBooks()">登録</button>
+            <button >登録</button>
     </div>
+    <footer class="Footer"></footer>
 </template>
 
 <script>
+import Header from './Header.vue';
+import Footer from './Footer.vue';
+
 export default{
     data(){
         return{
@@ -31,11 +36,11 @@ export default{
         }
     },
     methods:{
-        insertBooks(){
-            axios.post('/api/books/insertBooks',this.new_book).then(response =>{
-                this.books = response.data.books;
-            });
-        },
+        // insertBooks(){
+        //     axios.post('/api/books/insertBooks',this.new_book).then(response =>{
+        //         this.books = response.data.books;
+        //     });
+        // },
     }
     
 }
