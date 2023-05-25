@@ -161,8 +161,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        App\Providers\RegisterServiceProvider::class,   // 追加
-        App\Providers\GreetServiceProvider::class,   // 追加
 
         /*
          * Package Service Providers...
