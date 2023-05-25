@@ -1,12 +1,13 @@
 import VueRouter from 'vue-router';
 
 import ExampleComponent from './components/ExampleComponent';
+import addForm from './components/addForm';
 
 const routes = [
    {
       path: "/",
-      component: ExampleComponent,
-      name: "Top",
+      component: addForm,
+      name: "addForm",
    },
 ];
 
