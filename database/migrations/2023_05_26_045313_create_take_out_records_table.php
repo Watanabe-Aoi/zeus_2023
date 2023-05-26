@@ -17,7 +17,7 @@ class CreateTakeOutRecordsTable extends Migration
             $table->string('book_id')->nullable(false);
             $table->string('user_id')->nullable(false);
             $table->dateTime('takeout_date')->nullable(false);
-            $table->dateTime('returndate')->nullable();
+            $table->dateTime('returndate');
             $table->timestamp();    // created_at updated_atフィールドを自動設定
 
             $table->foreign('book_id')->references('book_id')->on('book_catalog');
