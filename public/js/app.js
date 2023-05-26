@@ -2140,7 +2140,7 @@ var render = function render() {
     _setup = _vm._self._setupProxy;
   return _c("div", {
     staticClass: "container"
-  }, [_c("Head"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("FootText")], 1);
+  }, [_c("HeadContent"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("Foottext")], 1);
 };
 var staticRenderFns = [function () {
   var _vm = this,

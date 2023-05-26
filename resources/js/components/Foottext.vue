@@ -4,7 +4,6 @@
    </div>
 </template>
 
-
 <style>
 .footer {
    border: black 1px solid;
