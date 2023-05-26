@@ -7,7 +7,7 @@ const routes = [
    {
       path: "/",
       component: addForm,
-      name: "addForm",
+      name: "TOP",
    },
 ];
 

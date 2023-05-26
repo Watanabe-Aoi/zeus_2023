@@ -1,5 +1,5 @@
 <template>
-   <div class="footer">
+   <div class="FootText">
       <p class="text">図書管理システム bcat v3</p>
    </div>
 </template>
