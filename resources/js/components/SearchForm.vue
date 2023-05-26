@@ -30,14 +30,14 @@
     </table>
 </template>
 <script>
-import Foottext from './Foottext.vue';
+import FootText from './FootText.vue';
 import HeadContent from './HeadContent.vue';
 
 export default {
 
     components: {
         HeadContent,
-        Foottext,
+        FootText,
     },
     data() {
         return {

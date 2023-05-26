@@ -1,5 +1,5 @@
 <template>
-   <div class="container">
+   <div class="HeadContent">
       <span class="textLarge">【bCat】図書管理システム</span>
       <span class="user">ユーザー:{{ this.user.name }}</span>
       <table>
