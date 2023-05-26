@@ -2134,8 +2134,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* binding */ render),
 /* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-var render = function render() {};
-var staticRenderFns = [];
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("Head"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("FootText")], 1);
+};
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("table", [_c("tr", [_c("th", [_vm._v("新規図書登録")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN:")]), _c("td", [_c("input", {
+    attrs: {
+      type: "text"
+    }
+  })]), _vm._v("例：ISBN1-2345-6789-X")]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("タイトル:")]), _c("td", [_c("input", {
+    attrs: {
+      type: "text"
+    }
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("著者:")]), _c("td", [_c("input", {
+    attrs: {
+      type: "text"
+    }
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者:")]), _c("td", [_c("input", {
+    attrs: {
+      type: "text"
+    }
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社:")]), _c("td", [_c("input", {
+    attrs: {
+      type: "text"
+    }
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日:")]), _c("td", [_c("input", {
+    attrs: {
+      type: "text"
+    }
+  })]), _vm._v("例：2003-04-05")]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード:")]), _c("td", [_c("input", {
+    attrs: {
+      type: "text"
+    }
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考:")]), _c("td", [_c("input", {
+    attrs: {
+      type: "text"
+    }
+  })])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("・印の項目は必ず入力してください。")])]), _vm._v(" "), _c("tr", [_c("td", [_c("button", [_vm._v("登録")])])])]);
+}];
+render._withStripped = true;
 
 
 /***/ }),
