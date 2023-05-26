@@ -1,6 +1,7 @@
 <template>
     <table>
-        <Header />
+
+        <Head />
         <div class="h">
 
             <Tr>
@@ -25,17 +26,18 @@
                 <p>{{ value }}</p>
             </tr>
         </div>
+        <FootText />
     </table>
 </template>
 <script>
-import Footer from './Footer.vue';
-import Header from './Header.vue';
+import FootText from './FootText.vue';
+import Head from './Head.vue';
 
 export default {
 
     components: {
-        Header,
-        Footer,
+        Head,
+        FootText,
     },
     data() {
         return {
