@@ -1,33 +1,29 @@
 <template>
     <div class="container">
-    <HeadContent />
-    
-    <h1>貸出中図書一覧</h1>
-    <lendingList :lending_books="lending_books"/>
-    <table>
-
-        <button class="btn btn-primary">この本を返却する</button>
-        <button class="btn btn-primary">編集</button>
-        <button class="btn btn-primary">削除</button>
-    </table>
-    <FootText />
+        <HeadContent />
+        <h1>返却手続きが完了しました</h1>
+        <lendingList :lending_books="lending_books" />
+        <table>
+            <button class="btn btn-primary">この本を借りる</button>
+            <button class="btn btn-primary">編集</button>
+            <button class="btn btn-primary">削除</button>
+            <button class="btn btn-primary">戻る</button>
+        </table>
+        <FootText />
     </div>
 </template>
-
 <script>
-// v-for="lending_books in lending_books" 
 import lendingList from './lendingList.vue';
 import FootText from './FootText.vue'
 import HeadContent from './HeadContent.vue';
 
-export default{
+export default {
     components: {
         lendingList,
         HeadContent,
         FootText,
     },
-    
-    data(){
+    data() {
         return {
             lending_books: {
                 author: '森塚',
