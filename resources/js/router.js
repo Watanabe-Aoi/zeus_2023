@@ -3,11 +3,13 @@ import VueRouter from 'vue-router';
 import ExampleComponent from './components/ExampleComponent';
 import addForm from './components/addForm';
 import SearchForm from './components/SearchForm';
+import TopMenu from './components/TopMenu';
+
 const routes = [
    {
       path: "/",
-      component: addForm,
-      name: "addForm",
+      component: TopMenu,
+      name: "TOP",
    },
    {
       path: "/searchForm",
