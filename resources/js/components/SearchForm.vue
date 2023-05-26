@@ -1,7 +1,7 @@
 <template>
     <table>
 
-        <Head />
+        <HeadContent />
         <div class="h">
 
             <Tr>
@@ -26,18 +26,18 @@
                 <p>{{ value }}</p>
             </tr>
         </div>
-        <FootText />
+        <Foottext />
     </table>
 </template>
 <script>
-import FootText from './FootText.vue';
-import Head from './Head.vue';
+import Foottext from './Foottext.vue';
+import HeadContent from './HeadContent.vue';
 
 export default {
 
     components: {
-        Head,
-        FootText,
+        HeadContent,
+        Foottext,
     },
     data() {
         return {
