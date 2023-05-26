@@ -47,6 +47,7 @@ export default {
 
     },
 
+    //テスト組んでるだけです
     mounted() {
         axios.get('/api/search').then(response => {
             this.bookcatalogs = response.data.bookcatalogs;
