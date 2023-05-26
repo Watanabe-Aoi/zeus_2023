@@ -23,20 +23,34 @@ export default {
     },
     data() {
         return {
-            bookcatalog: {
-                author: '森塚',
-                translator: '',
-                publisher: 'ゼウス',
-                publication_date: '2002-12-04',
-                keyword: 'プログラミング',
-                isbn: 'ISBN123456',
-                book_id: '20230525',
-                register_date: '2023-05-25',
-                condition: '貸出中',
-                remarks: '',
-            }
+            bookcatalog: [
+                {
+                    author: '森塚',
+                    translator: '',
+                    publisher: 'ゼウス',
+                    publication_date: '2002-12-04',
+                    keyword: 'プログラミング',
+                    isbn: 'ISBN123456',
+                    book_id: '20230525',
+                    register_date: '2023-05-25',
+                    condition: '貸出中',
+                    remarks: '',
+                }
+            ]
+
+
+
 
         }
+    },
+    methods: {
+
+        returnBook() {
+            axios.post('/api/bookcatalog', this.bookcatalog).then(response => {
+                this.bookcatalog = response.data.bookcatalog;
+            })
+        }
+
     }
 }
 

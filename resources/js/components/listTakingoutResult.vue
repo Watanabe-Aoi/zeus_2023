@@ -50,12 +50,6 @@ export default{
             this.bookcatalog = response.data.bookcatalog;
         })
     },
-
-    methods: {
-
-
-
-    }
 }
 
 </script>
