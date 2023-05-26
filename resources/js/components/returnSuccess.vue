@@ -2,13 +2,13 @@
     <div class="container">
         <HeadContent />
         <h1>返却手続きが完了しました</h1>
-        <lendingList :lending_books="lending_books" />
+        <lendingList :bookcatalog="bookcatalog" />
         <table>
             <button class="btn btn-primary">この本を借りる</button>
             <button class="btn btn-primary">編集</button>
             <button class="btn btn-primary">削除</button>
-            <button class="btn btn-primary">戻る</button>
         </table>
+        <router-link to="listTakingoutResult">戻る</router-link>
         <FootText />
     </div>
 </template>
@@ -25,7 +25,7 @@ export default {
     },
     data() {
         return {
-            lending_books: {
+            bookcatalog: {
                 author: '森塚',
                 translator: '',
                 publisher: 'ゼウス',

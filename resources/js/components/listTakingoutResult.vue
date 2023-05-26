@@ -3,10 +3,10 @@
     <HeadContent />
     
     <h1>貸出中図書一覧</h1>
-    <lendingList :lending_books="lending_books"/>
+    <lendingList :bookcatalog="bookcatalog"/>
     <table>
 
-        <button class="btn btn-primary">この本を返却する</button>
+        <button class="btn btn-primary" @click="returnCheck()">この本を返却する</button>
         <button class="btn btn-primary">編集</button>
         <button class="btn btn-primary">削除</button>
     </table>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-// v-for="lending_books in lending_books" 
+// v-for="bookcatalog in bookcatalog" 
 import lendingList from './lendingList.vue';
 import FootText from './FootText.vue'
 import HeadContent from './HeadContent.vue';
@@ -29,7 +29,7 @@ export default{
     
     data(){
         return {
-            lending_books: {
+            bookcatalog: {
                 author: '森塚',
                 translator: '',
                 publisher: 'ゼウス',
@@ -43,6 +43,18 @@ export default{
             }
 
         }
+    },
+
+    mounted(){
+        axios.get('/api/bookcatalog').then(response => {
+            this.bookcatalog = response.data.bookcatalog;
+        })
+    },
+
+    methods: {
+
+
+
     }
 }
 
