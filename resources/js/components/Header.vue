@@ -1,9 +1,7 @@
 <template>
    <div id="Title">
       <span class="textLarge">【bCat】図書管理システム</span>
-      <span id="user">ユーザー:{{ this.user.name }}</span> 
-   </div>
-   <div class="menu">
+      <span id="user">ユーザー:{{ this.user.name }}</span>
       <table>
          <tr>
             <td><button>メニュー</button></td>
@@ -18,7 +16,7 @@
 </template>
 
 <script>
-export default{
+export default {
    data() {
       return {
          user: {
@@ -34,7 +32,8 @@ export default{
    background-color: rgb(59, 192, 59);
    color: white;
 }
+
 .textLarge {
-   font-size:large;
+   font-size: large;
 }
 </style>
