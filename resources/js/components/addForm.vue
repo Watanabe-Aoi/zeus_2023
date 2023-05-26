@@ -56,10 +56,3 @@ export default{
 }
 
 </script>
-
-
-
-
-
-        
-
