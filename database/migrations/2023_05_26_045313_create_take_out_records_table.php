@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateTakeOutRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('take_out_records', function (Blueprint $table) {
+            $table->string('book_id')->nullable(false);
             $table->string('user_id')->nullable(false);
-            $table->string('user_name')->nullable(false);
-            $table->string('password')->nullable(false);
+            $table->dateTime('takeout_date')->nullable(false);
+            $table->dateTime('returndate')->nullable();
             $table->timestamp();    // created_at updated_atフィールドを自動設定
+
+            $table->foreign('book_id')->references('book_id')->on('book_catalog');
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 
@@ -28,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('take_out_records');
     }
 }
