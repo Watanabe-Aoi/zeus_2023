@@ -26,6 +26,7 @@ class CreateBookCatalogTable extends Migration
             $table->string('memo');
             $table->string('data_creator');
             $table->dateTime('deta_create_date');
+            $table->timestamps();
         });
     }
 
