@@ -2129,9 +2129,44 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/addForm.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Foottext_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Foottext.vue */ "./resources/js/components/Foottext.vue");
+/* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
 
 
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Foottext: _Foottext_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      new_book: {
+        isbn: '',
+        title: '',
+        author: '',
+        translater: '',
+        publisher: '',
+        date: '',
+        keyword: '',
+        remarks: ''
+      }
+    };
+  },
+  methods: {
+    // insertBooks(){
+    //     axios.post('/api/books/insertBooks',this.new_book).then(response =>{
+    //         this.books = response.data.books;
+    //     });
+    // },
+  }
+});
 
 /***/ }),
 
@@ -2336,45 +2371,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var render = function render() {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("div", {
-    staticClass: "container"
-  }, [_c("HeadContent"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("Foottext")], 1);
+    _c = _vm._self._c;
+  return _c("table", [_c("HeadContent"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("Foottext")], 1);
 };
 var staticRenderFns = [function () {
   var _vm = this,
-    _c = _vm._self._c,
-    _setup = _vm._self._setupProxy;
-  return _c("table", [_c("tr", [_c("th", [_vm._v("新規図書登録")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN:")]), _c("td", [_c("input", {
+    _c = _vm._self._c;
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("tr", [_c("th", [_vm._v("新規図書登録")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })]), _vm._v("例：ISBN1-2345-6789-X")]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("タイトル:")]), _c("td", [_c("input", {
+  })]), _vm._v("例：ISBN1-2345-6789-X\n        ")]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("タイトル:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("著者:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("著者:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })]), _vm._v("例：2003-04-05")]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード:")]), _c("td", [_c("input", {
+  })]), _vm._v("例：2003-04-05\n        ")]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
@@ -38253,9 +38286,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _addForm_vue_vue_type_template_id_563d380a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addForm.vue?vue&type=template&id=563d380a& */ "./resources/js/components/addForm.vue?vue&type=template&id=563d380a&");
 /* harmony import */ var _addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addForm.vue?vue&type=script&lang=js& */ "./resources/js/components/addForm.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[__WEBPACK_IMPORT_KEY__]
-/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -38342,11 +38372,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./addForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/addForm.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
-/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default())); 
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
