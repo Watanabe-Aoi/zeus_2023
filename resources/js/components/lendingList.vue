@@ -34,7 +34,8 @@
             <td></td>
             <td></td>
             <th>状態：</th>
-            <td>{{ lending_books.condition }}</td>
+            <td v-if="lending_books.condition = true">保管中</td>
+            <td v-else-if="lending_books.condition = false">貸出中</td>
         </tr>
         <tr>
             <th>備考：</th>

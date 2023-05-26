@@ -14,11 +14,13 @@ class LendingBookController extends Controller
     }
 
     public function returnBook(){
-        \DB::table('bookcatalog')->where('id',$bookid)->update(['status' => '保管中']);
+
+        \DB::table('bookcatalog')->where('id',$bookid)->update(['status' => true]);
         $bookcatalog = bookcatalog::all();
         return [
             'bookcatalog' => $bookcatalog
         ];
+
     }
 
 }
