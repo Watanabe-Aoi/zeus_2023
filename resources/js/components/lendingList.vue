@@ -30,6 +30,7 @@
             <th>図書ID：</th>
             <td>{{ lending_books.book_id }}</td>
         </tr>
+        
         <tr>
             <th>登録日：</th>
             <td>{{ lending_books.register_date }}</td>
