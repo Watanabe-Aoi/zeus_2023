@@ -22,8 +22,14 @@ export default{
       HeadContent,
       FootText,
    },
+
+   methods: {
+   }
 }
 </script>
 
 <style>
+ul {
+   list-style: none;
+}
 </style>
