@@ -5,10 +5,11 @@
 </template>
 
 <style>
-.footer {
-   border: black 1px solid;
+.FootText {
+   border-top: black 1px solid;
 }
 .text {
    text-align: right;
+   font-size: small;
 }
 </style>

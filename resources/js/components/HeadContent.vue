@@ -1,7 +1,7 @@
 <template>
    <div class="HeadContent">
       <div class="title">
-         <span>【bCat】図書管理システム</span>
+         <span id="title-text">【bCat】図書管理システム</span>
          <span v-if="this.$store.state.logining" class="user">ユーザー:{{ this.$store.state.user_id }}</span>
       </div>
       <div class="menu">
@@ -50,6 +50,10 @@ export default {
    width: 100%;
    background-color: rgb(20, 172, 20);
    color: white;
+}
+
+#title-text {
+   font-size: larger;
 }
 
 .user {
