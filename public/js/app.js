@@ -2134,13 +2134,15 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      bookcatalogs: ''
+      value: '',
+      bookcalogs: {}
     };
   },
+  //テスト組んでるだけです
   mounted: function mounted() {
     var _this = this;
     axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/search').then(function (response) {
-      _this.bookcatalogs = response.data.bookcatalogs;
+      _this.value = response.data.bookcalogs;
     });
   }
 });
@@ -2360,14 +2362,12 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", {
-    staticClass: "h"
-  }, [_c("Tr", [_c("th", [_vm._v("検索範囲：")]), _vm._v(" "), _c("select", {
+  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", [_c("Tr", [_c("th", [_vm._v("検索範囲：")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.bookcatalogs,
-      expression: "bookcatalogs"
+      value: _vm.value,
+      expression: "value"
     }],
     on: {
       change: function change($event) {
@@ -2377,51 +2377,51 @@ var render = function render() {
           var val = "_value" in o ? o._value : o.value;
           return val;
         });
-        _vm.bookcatalogs = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+        _vm.value = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
       }
     }
   }, [_c("option", {
     attrs: {
-      bookcatalogs: "book_id"
+      value: "book_id"
     }
   }, [_vm._v("図書ID")]), _vm._v(" "), _c("option", {
     attrs: {
-      bookcatalogs: "title"
+      value: "title"
     }
   }, [_vm._v("タイトル")]), _vm._v(" "), _c("option", {
     attrs: {
-      bookcatalogs: "3"
+      value: "3"
     }
   }, [_vm._v("著者")]), _vm._v(" "), _c("option", {
     attrs: {
-      bookcatalogs: "4"
+      value: "4"
     }
   }, [_vm._v("訳者")]), _vm._v(" "), _c("option", {
     attrs: {
-      bookcatalogs: "5"
+      value: "5"
     }
   }, [_vm._v("出版社")]), _vm._v(" "), _c("option", {
     attrs: {
-      bookcatalogs: "6"
+      value: "6"
     }
   }, [_vm._v("出版日")]), _vm._v(" "), _c("option", {
     attrs: {
-      bookcatalogs: "7"
+      value: "7"
     }
   }, [_vm._v("ISBN番号")]), _vm._v(" "), _c("option", {
     attrs: {
-      bookcatalogs: "8"
+      value: "8"
     }
   }, [_vm._v("備考")]), _vm._v(" "), _c("option", {
     attrs: {
-      bookcatalogs: "9"
+      value: "9"
     }
   }, [_vm._v("キーワード")])])]), _vm._v(" "), _c("Tr", [_c("th", [_vm._v("検索語：")]), _vm._v(" "), _c("input", {
     attrs: {
       type: "text",
       name: "serchvv"
     }
-  })]), _vm._v(" "), _c("tr", [_c("p", [_vm._v(_vm._s(_vm.bookcatalogs))])])], 1), _vm._v(" "), _c("FootText")], 1);
+  })]), _vm._v(" "), _c("tr", [_c("p", [_vm._v(_vm._s(_vm.value))])])], 1), _vm._v(" "), _c("FootText")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
