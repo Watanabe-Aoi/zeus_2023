@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
 // v-for="bookcatalog in bookcatalog" 
 import lendingList from './lendingList.vue';
 import FootText from './FootText.vue'
