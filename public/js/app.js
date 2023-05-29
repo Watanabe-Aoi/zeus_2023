@@ -2101,15 +2101,17 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       user: {
-        name: "sample"
+        name: ''
       }
     };
   },
   methods: {
     loginingChange: function loginingChange() {
-      var type = this.$store.state.logining ? ['logout', 'ed'] : ['login', 'page'];
-      this.$store.commit(type[0]);
-      this.$router.push(type[0] + type[1]);
+      if (this.$store.state.logining) {
+        this.$store.commit('logout');
+      } else {
+        this.$router.push('loginpage');
+      }
     }
   }
 });
@@ -2129,6 +2131,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
 /* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../router */ "./resources/js/router.js");
+
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2139,8 +2146,29 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       user_id: '',
-      password: ''
+      password: '',
+      errorMesses: []
     };
+  },
+  methods: {
+    tryLogin: function tryLogin() {
+      var _this = this;
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post('', {
+        user_id: this.user_id,
+        password: this.password
+      }).then(function (response) {
+        var user_name = response.data.user_name;
+        _this.$store.commit('login', {
+          id: _this.user_id,
+          name: user_name
+        });
+        _this.$toasted.seccess(user_name + ' としてログインしました。');
+        _this.$router.push('TOP');
+      })["catch"](function (error) {
+        _this.errorMesses = error.response.data.errors;
+        _this.$toasted.error('ログインできませんでした。');
+      });
+    }
   }
 });
 
@@ -2218,7 +2246,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }
+  },
+  methods: {}
 });
 
 /***/ }),
@@ -2456,7 +2485,13 @@ var render = function render() {
         _vm.password = $event.target.value;
       }
     }
-  })])])])]), _vm._v(" "), _c("FootText")], 1);
+  })])]), _vm._v(" "), _c("tr", [_c("td", [_c("button", {
+    on: {
+      click: _vm.tryLogin
+    }
+  }, [_vm._v("ログイン")])])])]), _vm._v(" "), _vm._l(_vm.errorMesses, function (error) {
+    return _c("p", {}, [_vm._v(_vm._s(error))]);
+  })], 2), _vm._v(" "), _c("FootText")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2830,11 +2865,15 @@ var store = {
     user_id: ''
   },
   mutations: {
-    login: function login(state) {
+    login: function login(state, user) {
       state.logining = true;
+      state.user_id = user.id;
+      state.user_name = user.name;
     },
     logout: function logout(state) {
       state.logining = false;
+      state.user_id = '';
+      state.user_name = '';
     }
   }
 };

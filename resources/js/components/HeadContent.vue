@@ -31,16 +31,18 @@ export default {
    data() {
         return {
             user: {
-               name: "sample",
+               name: '',
             },
         };
     },
 
     methods: {
       loginingChange() {
-         let type = this.$store.state.logining? ['logout', 'ed'] : ['login', 'page'];
-         this.$store.commit(type[0]);
-         this.$router.push(type[0] + type[1]);
+         if(this.$store.state.logining){
+            this.$store.commit('logout');
+         } else {
+            this.$router.push('loginpage');
+         }
       },
     }
 }

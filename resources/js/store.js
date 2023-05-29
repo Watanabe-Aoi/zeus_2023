@@ -11,11 +11,15 @@ const store = {
    },
 
    mutations: {
-      login(state) {
+      login(state, user) {
          state.logining = true;
+         state.user_id = user.id;
+         state.user_name = user.name;
       },
       logout(state) {
          state.logining = false;
+         state.user_id = '';
+         state.user_name = '';
       },
    }
 };

@@ -22,6 +22,9 @@ export default{
       HeadContent,
       FootText,
    },
+
+   methods: {
+   }
 }
 </script>
 
