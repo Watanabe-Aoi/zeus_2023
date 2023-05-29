@@ -3,15 +3,13 @@ import VueRouter from 'vue-router';
 import ExampleComponent from './components/ExampleComponent';
 import addForm from './components/addForm';
 import SearchForm from './components/SearchForm';
-<<<<<<< HEAD
-import confirmAddForm from './components/confirmAddForm';
-=======
 import TopMenu from './components/TopMenu';
 import listTakingoutResult from './components/listTakingoutResult';
 import confirmReturnForm from './components/confirmReturnForm';
 import returnSuccess from './components/returnSuccess';
+import confirmAddForm from './components/confirmAddForm';
+import addSuccess from './components/addSuccess';
 
->>>>>>> 34e506f1850c7e162e177895d8580ee379a9a0b6
 const routes = [
    {
       path: "/",
@@ -19,18 +17,27 @@ const routes = [
       name: "addForm",
    },
    {
+      path: "/addForm",
+      component: addForm,
+      name: "addForm",
+   },
+   {
+      path: "/confirmAddForm",
+      component: confirmAddForm,
+      name: "confirmAddForm"
+   },
+   {
+      path: "/addSuccess",
+      component: addSuccess,
+      name: "addSuccess"
+
+   },
+   {
       path: "/searchForm",
       component: SearchForm,
       name: "searchForm",
    },
    {
-<<<<<<< HEAD
-      path: '/confirmAddForm/:new_book',
-      component: confirmAddForm,
-      name: 'confirmAddForm',
-      
-    }
-=======
       path: "/listTakingoutResult",
       component: listTakingoutResult,
       name: "listTakingoutResult",
@@ -45,7 +52,6 @@ const routes = [
       component: returnSuccess,
       name: "returnSuccess",
    },
->>>>>>> 34e506f1850c7e162e177895d8580ee379a9a0b6
    
 ];
 

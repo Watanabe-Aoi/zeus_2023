@@ -11,6 +11,9 @@ use App\Models\Books;
 
 class BookController extends Controller
 {
+    public function confirmBook(Request $request){
+        $request
+    }
  
     public function addBook(Request $request, Response $response)
     {

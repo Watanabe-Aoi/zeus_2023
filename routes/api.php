@@ -18,9 +18,5 @@ use App\Http\Controllers\BookCOntroller;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-<<<<<<< HEAD
-Route::post('books/insertBook',[BookController::class,'insertBook']);
-=======
 
 Route::get('/bookcatalog',[LendingBookController::class, 'index']);
->>>>>>> 34e506f1850c7e162e177895d8580ee379a9a0b6
