@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\LendingBookController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/bookcatalog',[LendingBookController::class, 'index']);
+Route::get('/book_catalog',[LendingBookController::class, 'index']);

@@ -14,7 +14,7 @@ class BookCatalogTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'book_id' => 1,
+            'book_id' => '1',
             'title' => 'プログラミング言語',
             'author' => 'まつもとゆきひろ',
             'translator' => '',
@@ -25,7 +25,7 @@ class BookCatalogTableSeeder extends Seeder
             'keyword' => 'Ruby',
             'memo' => '',
             'data_creator' => '98-76-54',
-            'data_create_date' => '11111',
+            'deta_create_date' => 20230529,
         ];
         \DB::table('book_catalog')->insert($param);
     }

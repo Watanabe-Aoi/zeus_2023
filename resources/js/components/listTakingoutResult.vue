@@ -4,7 +4,7 @@
     
     <h1>貸出中図書一覧</h1>
     <lendingList :lending_books="lending_books"/>
-    <lendingList :lending_books="bookcatalog"/>
+    <!-- <lendingList :lending_books="this.book_catalog"/> -->
     <table>
 
         <button class="btn btn-primary" @click="returnCheck()">この本を返却する</button>
@@ -21,6 +21,7 @@
 import lendingList from './lendingList.vue';
 import FootText from './FootText.vue'
 import HeadContent from './HeadContent.vue';
+import axios from 'axios';
 
 export default{
     components: {
@@ -31,29 +32,16 @@ export default{
     
     data(){
         return {
-            lending_books: 
-                {
-                    author: '森塚',
-                    translator: '',
-                    publisher: 'ゼウス',
-                    publication_date: '2002-12-04',
-                    keyword: 'プログラミング',
-                    isbn: 'ISBN123456',
-                    book_id: '20230525',
-                    register_date: '2023-05-25',
-                    condition: '貸出中',
-                    remarks: '',
-                },
 
-                bookcatalog: []
-            
+            lending_books: []
 
         }
     },
 
     mounted(){
-        axios.get('/api/bookcatalog').then(response => {
-            this.bookcatalog = response.data.bookcatalog;
+        axios.get('/api/book_catalog').then(response => {
+            this.lending_books = response.data.book_catalog;
+            console.log(this.lending_books);
         })
     },
 }
