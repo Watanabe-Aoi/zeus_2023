@@ -60,10 +60,3 @@ export default{
 }
 
 </script>
-
-
-
-
-
-        
-

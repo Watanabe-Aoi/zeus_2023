@@ -2092,13 +2092,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       user: {
-        name: 'sample'
+        name: "sample"
       }
     };
+  },
+  components: {
+    RouterLink: vue_router__WEBPACK_IMPORTED_MODULE_0__.RouterLink
   }
 });
 
@@ -2316,13 +2321,39 @@ var render = function render() {
     staticClass: "textLarge"
   }, [_vm._v("【bCat】図書管理システム")]), _vm._v(" "), _c("span", {
     staticClass: "user"
-  }, [_vm._v("ユーザー:" + _vm._s(this.user.name))]), _vm._v(" "), _vm._m(0)]);
+  }, [_vm._v("ユーザー:" + _vm._s(this.user.name))]), _vm._v(" "), _c("table", [_c("tr", [_c("td", [_c("router-link", {
+    staticClass: "btn btn-link",
+    attrs: {
+      to: "/"
+    }
+  }, [_vm._v("メニュー")])], 1), _vm._v(" "), _c("td", [_c("router-link", {
+    staticClass: "btn btn-link",
+    attrs: {
+      to: ""
+    }
+  }, [_vm._v("検索")])], 1), _vm._v(" "), _c("td", [_c("router-link", {
+    staticClass: "btn btn-link",
+    attrs: {
+      to: ""
+    }
+  }, [_vm._v("全図書一覧")])], 1), _vm._v(" "), _c("td", [_c("router-link", {
+    staticClass: "btn btn-link",
+    attrs: {
+      to: ""
+    }
+  }, [_vm._v("貸出図書一覧")])], 1), _vm._v(" "), _c("td", [_c("router-link", {
+    staticClass: "btn btn-link",
+    attrs: {
+      to: ""
+    }
+  }, [_vm._v("新規図書登録")])], 1), _vm._v(" "), _c("td", [_c("router-link", {
+    staticClass: "btn btn-link",
+    attrs: {
+      to: ""
+    }
+  }, [_vm._v("ログイン")])], 1)])])]);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("table", [_c("tr", [_c("td", [_c("button", [_vm._v("メニュー")])]), _vm._v(" "), _c("td", [_c("button", [_vm._v("検索")])]), _vm._v(" "), _c("td", [_c("button", [_vm._v("全図書一覧")])]), _vm._v(" "), _c("td", [_c("button", [_vm._v("貸出図書一覧")])]), _vm._v(" "), _c("td", [_c("button", [_vm._v("新規図書登録")])]), _vm._v(" "), _c("td", [_c("button", [_vm._v("ログイン")])])])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -2732,7 +2763,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [{
   path: "/",
-  component: _components_addForm__WEBPACK_IMPORTED_MODULE_1__["default"],
+  component: TopMenu,
   name: "TOP"
 }, {
   path: "/searchForm",
