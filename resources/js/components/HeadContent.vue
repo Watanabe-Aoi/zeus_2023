@@ -5,17 +5,17 @@
          <span v-if="this.$store.state.logining" class="user">ユーザー:{{ this.$store.state.user_id }}</span>
       </div>
       <div class="menu">
-         <router-link to="/" class="btn btn-link">メニュー</router-link>
+         <button @click="toLink('/')" class="btn btn-link">メニュー</button>
          <span>|</span>
-         <router-link to="" class="btn btn-link">検索</router-link>
+         <button @click="toLink('')" class="btn btn-link">検索</button>
          <span>|</span>
-         <router-link to="" class="btn btn-link">全図書一覧</router-link>
+         <button @click="toLink('')" class="btn btn-link">全図書一覧</button>
          <span>|</span>
-         <router-link to="" class="btn btn-link">貸出図書一覧</router-link>
+         <button @click="toLink('')" class="btn btn-link">貸出図書一覧</button>
          <span>|</span>
-         <router-link to="" class="btn btn-link">新規図書登録</router-link>
+         <button @click="toLink('')" class="btn btn-link">新規図書登録</button>
          <span>||</span>
-         <button class="btn btn-link" @click="loginingChange">{{ login_logout_message }}</button>
+         <button @click="loginingChange" class="btn btn-link">{{ login_logout_message }}</button>
       </div>
    </div>
 </template>
@@ -32,9 +32,14 @@ export default {
       loginingChange() {
          if(this.$store.state.logining){
             this.$store.commit('logout');
+            this.toLink('logouted');
          } else {
-            this.$router.push('loginpage');
+            this.toLink('loginpage');
          }
+      },
+
+      toLink(link) {
+         this.$router.push(link).catch(err => {});
       },
    }
 }

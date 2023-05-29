@@ -14,7 +14,7 @@
             </tr>
             <tr><td><button @click="tryLogin">ログイン</button></td></tr>
          </table>
-         <p v-for="error of errorMesses" class="">{{ error }}</p>
+         <p v-for="error of errorMesses" class="alert alert-danger">{{ error }}</p>
       </div>
       <FootText />
    </div>
@@ -44,18 +44,19 @@ export default{
    methods: {
       tryLogin() {
          axios.post('/api/tryLogin', {user_id: this.user_id, password: this.password}).then(response => {
+            console.log(response);
             if(response.data.user !== null) {
                let userId = response.data.user.user_id;
+               this.$toasted.success(userId + ' としてログインしました。');
+               this.$router.push({ name:'TOP' });
                this.$store.commit('login', {
                   id: userId,
                });
-               this.$toasted.seccess(userId + ' としてログインしました。');
-               this.$router.push({ name:'TOP' });
             } else {
                this.errorMesses = ['ユーザーが見つからないか、パスワードが違います。'];
             }
          }).catch(error => {
-            this.errorMesses = error.response.data.errors;
+            this.errorMesses = error;
             this.$toasted.error('ログインできませんでした。');
          });
       }

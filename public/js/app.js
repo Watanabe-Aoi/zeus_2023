@@ -2102,9 +2102,13 @@ __webpack_require__.r(__webpack_exports__);
     loginingChange: function loginingChange() {
       if (this.$store.state.logining) {
         this.$store.commit('logout');
+        this.toLink('logouted');
       } else {
-        this.$router.push('loginpage');
+        this.toLink('loginpage');
       }
+    },
+    toLink: function toLink(link) {
+      this.$router.push(link)["catch"](function (err) {});
     }
   }
 });
@@ -2150,20 +2154,21 @@ __webpack_require__.r(__webpack_exports__);
         user_id: this.user_id,
         password: this.password
       }).then(function (response) {
+        console.log(response);
         if (response.data.user !== null) {
           var userId = response.data.user.user_id;
-          _this.$store.commit('login', {
-            id: userId
-          });
-          _this.$toasted.seccess(userId + ' としてログインしました。');
+          _this.$toasted.success(userId + ' としてログインしました。');
           _this.$router.push({
             name: 'TOP'
+          });
+          _this.$store.commit('login', {
+            id: userId
           });
         } else {
           _this.errorMesses = ['ユーザーが見つからないか、パスワードが違います。'];
         }
       })["catch"](function (error) {
-        _this.errorMesses = error.response.data.errors;
+        _this.errorMesses = error;
         _this.$toasted.error('ログインできませんでした。');
       });
     }
@@ -2388,37 +2393,47 @@ var render = function render() {
     staticClass: "user"
   }, [_vm._v("ユーザー:" + _vm._s(this.$store.state.user_id))]) : _vm._e()]), _vm._v(" "), _c("div", {
     staticClass: "menu"
-  }, [_c("router-link", {
+  }, [_c("button", {
     staticClass: "btn btn-link",
-    attrs: {
-      to: "/"
+    on: {
+      click: function click($event) {
+        return _vm.toLink("/");
+      }
     }
-  }, [_vm._v("メニュー")]), _vm._v(" "), _c("span", [_vm._v("|")]), _vm._v(" "), _c("router-link", {
+  }, [_vm._v("メニュー")]), _vm._v(" "), _c("span", [_vm._v("|")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-link",
-    attrs: {
-      to: ""
+    on: {
+      click: function click($event) {
+        return _vm.toLink("");
+      }
     }
-  }, [_vm._v("検索")]), _vm._v(" "), _c("span", [_vm._v("|")]), _vm._v(" "), _c("router-link", {
+  }, [_vm._v("検索")]), _vm._v(" "), _c("span", [_vm._v("|")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-link",
-    attrs: {
-      to: ""
+    on: {
+      click: function click($event) {
+        return _vm.toLink("");
+      }
     }
-  }, [_vm._v("全図書一覧")]), _vm._v(" "), _c("span", [_vm._v("|")]), _vm._v(" "), _c("router-link", {
+  }, [_vm._v("全図書一覧")]), _vm._v(" "), _c("span", [_vm._v("|")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-link",
-    attrs: {
-      to: ""
+    on: {
+      click: function click($event) {
+        return _vm.toLink("");
+      }
     }
-  }, [_vm._v("貸出図書一覧")]), _vm._v(" "), _c("span", [_vm._v("|")]), _vm._v(" "), _c("router-link", {
+  }, [_vm._v("貸出図書一覧")]), _vm._v(" "), _c("span", [_vm._v("|")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-link",
-    attrs: {
-      to: ""
+    on: {
+      click: function click($event) {
+        return _vm.toLink("");
+      }
     }
   }, [_vm._v("新規図書登録")]), _vm._v(" "), _c("span", [_vm._v("||")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-link",
     on: {
       click: _vm.loginingChange
     }
-  }, [_vm._v(_vm._s(_vm.login_logout_message))])], 1)]);
+  }, [_vm._v(_vm._s(_vm.login_logout_message))])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2488,7 +2503,9 @@ var render = function render() {
       click: _vm.tryLogin
     }
   }, [_vm._v("ログイン")])])])]), _vm._v(" "), _vm._l(_vm.errorMesses, function (error) {
-    return _c("p", {}, [_vm._v(_vm._s(error))]);
+    return _c("p", {
+      staticClass: "alert alert-danger"
+    }, [_vm._v(_vm._s(error))]);
   })], 2), _vm._v(" "), _c("FootText")], 1);
 };
 var staticRenderFns = [];

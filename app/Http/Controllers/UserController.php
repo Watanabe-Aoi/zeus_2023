@@ -8,9 +8,15 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function authenticate(Request $request) {
-        $user = User::where('user_id', '=', $request->user_id)
+        $exists = User::where('user_id', '=', $request->user_id)
                         ->where('password', '=', $request->password)
-                        ->first();
+                        ->exists();
+        $user = null;
+        if($exists) {
+            $user = User::where('user_id', '=', $request->user_id)
+                            ->where('password', '=', $request->password)
+                            ->first();
+        }
         return ['user' => $user];
     }
 }
