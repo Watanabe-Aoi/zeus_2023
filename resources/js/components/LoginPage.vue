@@ -43,14 +43,17 @@ export default{
 
    methods: {
       tryLogin() {
-         axios.post('', {user_id: this.user_id, password: this.password}).then(response => {
-            let user_name = response.data.user_name
-            this.$store.commit('login', {
-               id: this.user_id,
-               name: user_name,
-            });
-            this.$toasted.seccess(user_name + ' としてログインしました。');
-            this.$router.push('TOP');
+         axios.post('/api/tryLogin', {user_id: this.user_id, password: this.password}).then(response => {
+            if(response.data.user !== null) {
+               let userId = response.data.user.user_id;
+               this.$store.commit('login', {
+                  id: userId,
+               });
+               this.$toasted.seccess(userId + ' としてログインしました。');
+               this.$router.push({ name:'TOP' });
+            } else {
+               this.errorMesses = ['ユーザーが見つからないか、パスワードが違います。'];
+            }
          }).catch(error => {
             this.errorMesses = error.response.data.errors;
             this.$toasted.error('ログインできませんでした。');

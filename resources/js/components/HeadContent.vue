@@ -2,7 +2,7 @@
    <div class="HeadContent">
       <div class="title">
          <span>【bCat】図書管理システム</span>
-         <span class="user">ユーザー:{{ this.user.name }}</span>
+         <span v-if="this.$store.state.logining" class="user">ユーザー:{{ this.$store.state.user_id }}</span>
       </div>
       <div class="menu">
          <router-link to="/" class="btn btn-link">メニュー</router-link>
@@ -27,16 +27,8 @@ export default {
          return this.$store.state.logining? 'ログアウト' : 'ログイン';
       },
    },
-   
-   data() {
-        return {
-            user: {
-               name: '',
-            },
-        };
-    },
 
-    methods: {
+   methods: {
       loginingChange() {
          if(this.$store.state.logining){
             this.$store.commit('logout');
@@ -44,7 +36,7 @@ export default {
             this.$router.push('loginpage');
          }
       },
-    }
+   }
 }
 </script>
 

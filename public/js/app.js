@@ -2098,13 +2098,6 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.state.logining ? 'ログアウト' : 'ログイン';
     }
   },
-  data: function data() {
-    return {
-      user: {
-        name: ''
-      }
-    };
-  },
   methods: {
     loginingChange: function loginingChange() {
       if (this.$store.state.logining) {
@@ -2153,17 +2146,22 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     tryLogin: function tryLogin() {
       var _this = this;
-      axios__WEBPACK_IMPORTED_MODULE_2___default().post('', {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post('/api/tryLogin', {
         user_id: this.user_id,
         password: this.password
       }).then(function (response) {
-        var user_name = response.data.user_name;
-        _this.$store.commit('login', {
-          id: _this.user_id,
-          name: user_name
-        });
-        _this.$toasted.seccess(user_name + ' としてログインしました。');
-        _this.$router.push('TOP');
+        if (response.data.user !== null) {
+          var userId = response.data.user.user_id;
+          _this.$store.commit('login', {
+            id: userId
+          });
+          _this.$toasted.seccess(userId + ' としてログインしました。');
+          _this.$router.push({
+            name: 'TOP'
+          });
+        } else {
+          _this.errorMesses = ['ユーザーが見つからないか、パスワードが違います。'];
+        }
       })["catch"](function (error) {
         _this.errorMesses = error.response.data.errors;
         _this.$toasted.error('ログインできませんでした。');
@@ -2386,9 +2384,9 @@ var render = function render() {
     staticClass: "HeadContent"
   }, [_c("div", {
     staticClass: "title"
-  }, [_c("span", [_vm._v("【bCat】図書管理システム")]), _vm._v(" "), _c("span", {
+  }, [_c("span", [_vm._v("【bCat】図書管理システム")]), _vm._v(" "), this.$store.state.logining ? _c("span", {
     staticClass: "user"
-  }, [_vm._v("ユーザー:" + _vm._s(this.user.name))])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("ユーザー:" + _vm._s(this.$store.state.user_id))]) : _vm._e()]), _vm._v(" "), _c("div", {
     staticClass: "menu"
   }, [_c("router-link", {
     staticClass: "btn btn-link",
@@ -2861,19 +2859,16 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
 var store = {
   state: {
     logining: false,
-    user_name: '',
     user_id: ''
   },
   mutations: {
     login: function login(state, user) {
       state.logining = true;
       state.user_id = user.id;
-      state.user_name = user.name;
     },
     logout: function logout(state) {
       state.logining = false;
       state.user_id = '';
-      state.user_name = '';
     }
   }
 };

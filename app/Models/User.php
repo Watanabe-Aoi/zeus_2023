@@ -13,8 +13,5 @@ class User extends Model
     protected $guarded = [];
 
     public static function rules() {
-        return [
-            // rules
-        ];
     }
 }
