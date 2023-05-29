@@ -26,18 +26,19 @@ import HeadContent from './HeadContent.vue';
 
 export default{
     data(){
-        new_book:[{
-            code: '',
-            title: '',
-            author: '',
-            translater: '',
-            publisher: '',
-            publicationdate: '',
-            keyword: '',
-            memo: '',
-        
+        return{
+            new_book:{
+                code: '',
+                title: '',
+                author: '',
+                translater: '',
+                publisher: '',
+                publicationdate: '',
+                keyword: '',
+                memo: '',
+            }
 
-        }]
+        }
 
     },
     
