@@ -13,10 +13,7 @@
                 <tr><th>キーワード:</th><td><input type="text" v-model="new_book.keyword"></td></tr>
                 <tr><th>備考:</th><td><input type="text" v-model="new_book.memo"></td></tr>
                 <tr><td>・印の項目は必ず入力してください。</td></tr>
-
                 <td><router-link to="/confirmAddForm/:new_book">登録</router-link></td>
-
-
             </table>
         </div>
         <FootText />
@@ -26,30 +23,32 @@
 <script>
 import FootText from './FootText.vue'
 import HeadContent from './HeadContent.vue';
-import confirmAddForm from './confirmAddForm.vue';
 
 export default{
+    data(){
+        new_book:[{
+            code: '',
+            title: '',
+            author: '',
+            translater: '',
+            publisher: '',
+            publicationdate: '',
+            keyword: '',
+            memo: '',
+        
+
+        }]
+
+    },
+    
     
     components: {
         HeadContent,
         FootText,
+    
     },
 
-    data(){
-        return{
-            new_book:{
-                code:'',
-                title:'',
-                author:'',
-                translater:'',
-                publisher:'',
-                publicationdate:'',
-                keyword:'',
-                memo:'',
-                datacreator:'',
-            }
-        }
-    },
+    
     // methods:{
     //     confirmInsertBook(new_book){
     //         this.$store.commit('confirmInsertBook', new_book);

@@ -2151,30 +2151,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
 /* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
-/* harmony import */ var _confirmAddForm_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./confirmAddForm.vue */ "./resources/js/components/confirmAddForm.vue");
-
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    new_book: [{
+      code: '',
+      title: '',
+      author: '',
+      translater: '',
+      publisher: '',
+      publicationdate: '',
+      keyword: '',
+      memo: ''
+    }];
+  },
   components: {
     HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      new_book: {
-        code: '',
-        title: '',
-        author: '',
-        translater: '',
-        publisher: '',
-        publicationdate: '',
-        keyword: '',
-        memo: '',
-        datacreator: ''
-      }
-    };
-  } // methods:{
+  }
+
+  // methods:{
   //     confirmInsertBook(new_book){
   //         this.$store.commit('confirmInsertBook', new_book);
   //         this.$router.push({ path: '/confirmAddForm/${new_book}'});
@@ -2763,8 +2760,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [{
   path: "/",
-  component: TopMenu,
-  name: "TOP"
+  component: _components_addForm__WEBPACK_IMPORTED_MODULE_1__["default"],
+  name: "addForm"
 }, {
   path: "/searchForm",
   component: _components_SearchForm__WEBPACK_IMPORTED_MODULE_2__["default"],

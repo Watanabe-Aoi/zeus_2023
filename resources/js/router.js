@@ -7,8 +7,8 @@ import confirmAddForm from './components/confirmAddForm';
 const routes = [
    {
       path: "/",
-      component: TopMenu,
-      name: "TOP",
+      component: addForm,
+      name: "addForm",
    },
    {
       path: "/searchForm",
