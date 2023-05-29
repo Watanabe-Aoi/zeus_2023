@@ -7,8 +7,8 @@
             <Tr>
                 <th>検索範囲：</th>
                 <select v-model="value">
-                    <option value="book_id">図書ID</option>
-                    <option value="title">タイトル</option>
+                    <option value="1">図書ID</option>
+                    <option value="2">タイトル</option>
                     <option value="3">著者</option>
                     <option value="4">訳者</option>
                     <option value="5">出版社</option>
@@ -24,6 +24,9 @@
             </Tr>
             <tr>
                 <p>{{ value }}</p>
+            </tr>
+            <tr>
+                aqaq{{ this.book_catalogs }}
             </tr>
         </div>
         <FootText />
@@ -43,7 +46,7 @@ export default {
     data() {
         return {
             value: '',
-            bookcalogs: {},
+            book_catalogs: '',
         }
 
     },
@@ -51,8 +54,11 @@ export default {
     //テスト組んでるだけです
     mounted() {
         axios.get('/api/search').then(response => {
-            this.value = response.data.bookcalogs;
+            this.book_catalogs = response.data.book_catalogs;
+        }).catch(function (error) {
+            console.log('error');
         })
+        this.$toasted.success('うごきました');
     }
 }
 

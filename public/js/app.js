@@ -2135,15 +2135,18 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       value: '',
-      bookcalogs: {}
+      book_catalogs: ''
     };
   },
   //テスト組んでるだけです
   mounted: function mounted() {
     var _this = this;
     axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/search').then(function (response) {
-      _this.value = response.data.bookcalogs;
+      _this.book_catalogs = response.data.book_catalogs;
+    })["catch"](function (error) {
+      console.log('error');
     });
+    this.$toasted.success('うごきました');
   }
 });
 
@@ -2382,11 +2385,11 @@ var render = function render() {
     }
   }, [_c("option", {
     attrs: {
-      value: "book_id"
+      value: "1"
     }
   }, [_vm._v("図書ID")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "title"
+      value: "2"
     }
   }, [_vm._v("タイトル")]), _vm._v(" "), _c("option", {
     attrs: {
@@ -2421,7 +2424,7 @@ var render = function render() {
       type: "text",
       name: "serchvv"
     }
-  })]), _vm._v(" "), _c("tr", [_c("p", [_vm._v(_vm._s(_vm.value))])])], 1), _vm._v(" "), _c("FootText")], 1);
+  })]), _vm._v(" "), _c("tr", [_c("p", [_vm._v(_vm._s(_vm.value))])]), _vm._v(" "), _c("tr", [_vm._v("\n            aqaq" + _vm._s(this.book_catalogs) + "\n        ")])], 1), _vm._v(" "), _c("FootText")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;

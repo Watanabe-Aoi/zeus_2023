@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/search',[SearchController::class, 'searchIndex']);
+
+//Route::get('/search',[SearchController::class, 'index']);
