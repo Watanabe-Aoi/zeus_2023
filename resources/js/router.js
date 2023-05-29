@@ -4,7 +4,7 @@ import ExampleComponent from './components/ExampleComponent';
 import addForm from './components/addForm';
 import SearchForm from './components/SearchForm';
 import TopMenu from './components/TopMenu';
-import Login from './components/Login';
+import LoginPage from './components/LoginPage';
 import Logouted from './components/Logouted';
 
 const routes = [
@@ -14,9 +14,9 @@ const routes = [
       name: "TOP",
    },
    {
-      path: "/login",
-      component: Login,
-      name: "login",
+      path: "/loginpage",
+      component: LoginPage,
+      name: "loginpage",
    },
    {
       path: "/logouted",

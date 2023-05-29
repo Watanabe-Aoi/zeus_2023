@@ -3,7 +3,7 @@
       <HeadContent />
       
       <h1>ログアウトしました。</h1>
-      <router-link to="/login" class="btn btn-link">ログイン</router-link>
+      <router-link to="/loginpage" class="btn btn-link">ログイン</router-link>
 
       <FootText />
    </div>   

@@ -15,36 +15,34 @@
          <span>|</span>
          <router-link to="" class="btn btn-link">新規図書登録</router-link>
          <span>||</span>
-         <button to="" class="btn btn-link">{{ this.login_logout_message }}</button>
+         <button class="btn btn-link" @click="loginingChange">{{ login_logout_message }}</button>
       </div>
    </div>
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
-
-
 export default {
    computed: {
       login_logout_message() {
-         return this.logining? 'ログアウト' : 'ログイン';
+         return this.$store.state.logining? 'ログアウト' : 'ログイン';
       },
-
-      login_loguot_link() {
-         if(this.logining){
-            this.logining
-         }
-      }
    },
    
    data() {
         return {
             user: {
                name: "sample",
-               logining: false,
             },
         };
     },
+
+    methods: {
+      loginingChange() {
+         let type = this.$store.state.logining? ['logout', 'ed'] : ['login', 'page'];
+         this.$store.commit(type[0]);
+         this.$router.push(type[0] + type[1]);
+      },
+    }
 }
 </script>
 

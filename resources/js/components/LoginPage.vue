@@ -6,11 +6,11 @@
          <table>
             <tr>
                <td>ID:</td>
-               <td><input type="text" v-model="this.id" class="form-control"></td>
+               <td><input type="text" v-model="user_id" class="form-control"></td>
             </tr>
             <tr>
                <td>パスワード:</td>
-               <td><input type="text" v-model="this.password" class="form-control"></td>
+               <td><input type="text" v-model="password" class="form-control"></td>
             </tr>
          </table>
       </div>
