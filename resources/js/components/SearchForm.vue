@@ -46,7 +46,7 @@ export default {
     data() {
         return {
             value: '',
-            book_catalogs: '',
+            book_catalogs: [],
         }
 
     },
