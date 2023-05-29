@@ -20,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/book_catalog',[LendingBookController::class, 'index']);
+Route::get('/book_catalog', [LendingBookController::class, 'index']);
+Route::post('/book_catalog', [LendingBookController::class, 'deleteBook']);

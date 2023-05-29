@@ -2221,6 +2221,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lendingList_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lendingList.vue */ "./resources/js/components/lendingList.vue");
 /* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
 /* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -2232,25 +2235,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      bookcatalog: [{
-        author: '森塚',
-        translator: '',
-        publisher: 'ゼウス',
-        publication_date: '2002-12-04',
-        keyword: 'プログラミング',
-        isbn: 'ISBN123456',
-        book_id: '20230525',
-        register_date: '2023-05-25',
-        condition: '貸出中',
-        remarks: ''
-      }]
+      bookcatalog: []
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_3___default().get('/api/book_catalog').then(function (response) {
+      _this.bookcatalog = response.data.book_catalog;
+    });
   },
   methods: {
     returnBook: function returnBook() {
-      var _this = this;
-      axios.post('/api/bookcatalog', this.bookcatalog).then(function (response) {
-        _this.bookcatalog = response.data.bookcatalog;
+      var _this2 = this;
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/bookcatalog', this.bookcatalog).then(function (response) {
+        _this2.bookcatalog = response.data.bookcatalog;
       });
     }
   }
@@ -2271,7 +2269,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    lending_books: []
+    lending_book: []
   }
 });
 
@@ -2313,8 +2311,18 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
     axios__WEBPACK_IMPORTED_MODULE_3___default().get('/api/book_catalog').then(function (response) {
       _this.lending_books = response.data.book_catalog;
-      console.log(_this.lending_books);
     });
+  },
+  methods: {
+    returnBook: function returnBook() {},
+    deleteBook: function deleteBook(book_id) {
+      var _this2 = this;
+      // console.log(book_id);
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog', this.book_id).then(function (response) {
+        _this2.lending_books = response.data.book_catalog;
+        console.log(_this2.lending_books);
+      });
+    }
   }
 });
 
@@ -2701,7 +2709,7 @@ var render = function render() {
     staticClass: "container"
   }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("この図書の返却手続きをします")]), _vm._v(" "), _c("lendingList", {
     attrs: {
-      bookcatalog: _vm.bookcatalog
+      lending_books: _vm.bookcatalog
     }
   }), _vm._v(" "), _c("table", [_c("button", {
     staticClass: "btn btn-primary"
@@ -2734,9 +2742,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "content"
-  }, _vm._l(_vm.lending_books, function (lending_book) {
-    return _c("table", [_c("tr", [_c("th", [_vm._v("著者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.author))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.translator))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.publisher))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.publication_date))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.keyword))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.code))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("図書ID：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.book_id))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.deta_create_date))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("状態：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.status))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(lending_book.memo))])])]);
-  }), 0);
+  }, [_c("table", [_c("tr", [_c("th", [_vm._v("著者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.author))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.translator))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.publisher))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.publication_date))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.keyword))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.code))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("図書ID：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.book_id))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.deta_create_date))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("状態：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.status))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_book.memo))])])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2761,22 +2767,30 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("貸出中図書一覧")]), _vm._v(" "), _c("lendingList", {
-    attrs: {
-      lending_books: _vm.lending_books
-    }
-  }), _vm._v(" "), _c("table", [_c("button", {
-    staticClass: "btn btn-primary",
-    on: {
-      click: function click($event) {
-        return _vm.returnCheck();
+  }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("貸出中図書一覧")]), _vm._v(" "), _vm._l(_vm.lending_books, function (lending_book) {
+    return _c("div", [_c("lendingList", {
+      key: lending_book.book_id,
+      attrs: {
+        lending_book: lending_book
       }
-    }
-  }, [_vm._v("この本を返却する")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary"
-  }, [_vm._v("編集")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary"
-  }, [_vm._v("削除")])]), _vm._v(" "), _c("FootText")], 1);
+    }), _vm._v(" "), _c("button", {
+      staticClass: "btn btn-primary",
+      on: {
+        click: function click($event) {
+          return _vm.deleteBook(lending_book.book_id);
+        }
+      }
+    }, [_vm._v("削除")]), _vm._v(" "), _c("button", {
+      staticClass: "btn btn-primary",
+      on: {
+        click: function click($event) {
+          return _vm.returnCheck();
+        }
+      }
+    }, [_vm._v("この本を返却する")]), _vm._v(" "), _c("button", {
+      staticClass: "btn btn-primary"
+    }, [_vm._v("編集")])], 1);
+  }), _vm._v(" "), _c("FootText")], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;

@@ -13,10 +13,17 @@ class LendingBookController extends Controller
         ];
     }
 
+    public function deleteBook(Request $request){
+        // \DB::table('book_catalog')->where('id',$request->all())
+        return[
+            'book_catalog' => $book_catalog = $request->all(),
+        ];
+    }
+
     public function returnBook(){
 
-        \DB::table('bookcatalog')->where('id',$bookid)->update(['status' => true]);
-        $bookcatalog = bookcatalog::all();
+        \DB::table('book_catalog')->where('id',$bookid)->update(['status' => true]);
+        $book_catalog = book_catalog::all();
         return [
             'bookcatalog' => $bookcatalog
         ];
