@@ -1,17 +1,22 @@
 <template>
    <div class="HeadContent">
-      <span class="textLarge">【bCat】図書管理システム</span>
-      <span class="user">ユーザー:{{ this.user.name }}</span>
-      <table>
-         <tr>
-            <td><router-link to="/" class="btn btn-link">メニュー</router-link></td>
-            <td><router-link to="" class="btn btn-link">検索</router-link></td>
-            <td><router-link to="" class="btn btn-link">全図書一覧</router-link></td>
-            <td><router-link to="" class="btn btn-link">貸出図書一覧</router-link></td>
-            <td><router-link to="" class="btn btn-link">新規図書登録</router-link></td>
-            <td><router-link to="" class="btn btn-link">ログイン</router-link></td>
-         </tr>
-      </table>
+      <div class="title">
+         <span>【bCat】図書管理システム</span>
+         <span class="user">ユーザー:{{ this.user.name }}</span>
+      </div>
+      <div class="menu">
+         <router-link to="/" class="btn btn-link">メニュー</router-link>
+         <span>|</span>
+         <router-link to="" class="btn btn-link">検索</router-link>
+         <span>|</span>
+         <router-link to="" class="btn btn-link">全図書一覧</router-link>
+         <span>|</span>
+         <router-link to="" class="btn btn-link">貸出図書一覧</router-link>
+         <span>|</span>
+         <router-link to="" class="btn btn-link">新規図書登録</router-link>
+         <span>||</span>
+         <button to="" class="btn btn-link">{{ this.login_logout_message }}</button>
+      </div>
    </div>
 </template>
 
@@ -20,24 +25,45 @@ import { RouterLink } from 'vue-router';
 
 
 export default {
-    data() {
+   computed: {
+      login_logout_message() {
+         return this.logining? 'ログアウト' : 'ログイン';
+      },
+
+      login_loguot_link() {
+         if(this.logining){
+            this.logining
+         }
+      }
+   },
+   
+   data() {
         return {
             user: {
-                name: "sample",
+               name: "sample",
+               logining: false,
             },
         };
     },
-    components: { RouterLink }
 }
 </script>
 
 <style>
-.Title {
-   background-color: rgb(59, 192, 59);
+.title {
+   width: 100%;
+   background-color: rgb(20, 172, 20);
    color: white;
 }
 
-.textLarge {
-   font-size: large;
+.user {
+   right: 10px;
+   float: right;
+}
+
+.menu {
+   display: inline-block;
+   width: 100%;
+   background-color: rgb(196, 195, 195);
+   text-align: right;
 }
 </style>
