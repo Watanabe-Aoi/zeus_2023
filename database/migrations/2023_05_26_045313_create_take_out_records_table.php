@@ -22,6 +22,7 @@ class CreateTakeOutRecordsTable extends Migration
 
             $table->foreign('book_id')->references('book_id')->on('book_catalog');
             $table->foreign('user_id')->references('user_id')->on('users');
+            $table->timestamps();
         });
     }
 

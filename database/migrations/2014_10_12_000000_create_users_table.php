@@ -20,9 +20,12 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 =======
             $table->string('user_id')->primary();
-            $table->string('user_name');
             $table->string('password');
+<<<<<<< HEAD
 >>>>>>> 34e506f1850c7e162e177895d8580ee379a9a0b6
+=======
+            $table->timestamps();
+>>>>>>> 999e06cb3d20fd108c7e9bd86ef95485528aaf64
         });
     }
 
