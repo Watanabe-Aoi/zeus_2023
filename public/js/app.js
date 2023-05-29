@@ -2398,19 +2398,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _lendingList_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lendingList.vue */ "./resources/js/components/lendingList.vue");
-/* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
-/* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
-// v-for="bookcatalog in bookcatalog" 
-
-
+// v-for="lending_books in lending_books" 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    lendingList: _lendingList_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  },
   data: function data() {
     return {
       lending_books: {
@@ -2424,15 +2414,8 @@ __webpack_require__.r(__webpack_exports__);
         register_date: '2023-05-25',
         condition: '貸出中',
         remarks: ''
-      },
-      bookcatalog: []
+      }
     };
-  },
-  mounted: function mounted() {
-    var _this = this;
-    axios.get('/api/bookcatalog').then(function (response) {
-      _this.bookcatalog = response.data.bookcatalog;
-    });
   }
 });
 
@@ -3087,26 +3070,13 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("貸出中図書一覧")]), _vm._v(" "), _c("lendingList", {
-    attrs: {
-      lending_books: _vm.lending_books
-    }
-  }), _vm._v(" "), _c("lendingList", {
-    attrs: {
-      lending_books: _vm.bookcatalog
-    }
-  }), _vm._v(" "), _c("table", [_c("button", {
-    staticClass: "btn btn-primary",
-    on: {
-      click: function click($event) {
-        return _vm.returnCheck();
-      }
-    }
+  }, [_c("h1", [_vm._v("貸出中図書一覧")]), _vm._v(" "), _c("table", [_c("tr", [_c("th", [_vm._v("著者：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.author))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.translator))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.publisher))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.publication_date))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.keyword))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.isbn))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("図書ID：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.book_id))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.register_date))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("状態：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.condition))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.remarks))])]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary"
   }, [_vm._v("この本を返却する")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary"
   }, [_vm._v("編集")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary"
-  }, [_vm._v("削除")])]), _vm._v(" "), _c("FootText")], 1);
+  }, [_vm._v("削除")])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -3262,10 +3232,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [{
-  path: "/",
-  component: _components_addForm__WEBPACK_IMPORTED_MODULE_1__["default"],
-  name: "addForm"
-}, {
   path: "/addForm",
   component: _components_addForm__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: "addForm"
@@ -3277,6 +3243,10 @@ var routes = [{
   path: "/addSuccess",
   component: _components_addSuccess__WEBPACK_IMPORTED_MODULE_8__["default"],
   name: "addSuccess"
+}, {
+  path: "/",
+  component: _components_TopMenu__WEBPACK_IMPORTED_MODULE_3__["default"],
+  name: "TOP"
 }, {
   path: "/searchForm",
   component: _components_SearchForm__WEBPACK_IMPORTED_MODULE_2__["default"],

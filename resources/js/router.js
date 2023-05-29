@@ -11,11 +11,7 @@ import confirmAddForm from './components/confirmAddForm';
 import addSuccess from './components/addSuccess';
 
 const routes = [
-   {
-      path: "/",
-      component: addForm,
-      name: "addForm",
-   },
+   
    {
       path: "/addForm",
       component: addForm,
@@ -30,7 +26,11 @@ const routes = [
       path: "/addSuccess",
       component: addSuccess,
       name: "addSuccess"
-
+   },
+   {
+      path: "/",
+      component: TopMenu,
+      name: "TOP",
    },
    {
       path: "/searchForm",
