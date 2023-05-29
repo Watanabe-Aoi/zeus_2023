@@ -2303,7 +2303,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      bookcatalog: [{
+      lending_books: {
         author: '森塚',
         translator: '',
         publisher: 'ゼウス',
@@ -2314,7 +2314,8 @@ __webpack_require__.r(__webpack_exports__);
         register_date: '2023-05-25',
         condition: '貸出中',
         remarks: ''
-      }]
+      },
+      bookcatalog: []
     };
   },
   mounted: function mounted() {
@@ -2739,7 +2740,9 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("table", [_c("tr", [_c("th", [_vm._v("著者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.author))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.translator))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.publisher))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.publication_date))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.keyword))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.isbn))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("図書ID：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.book_id))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.register_date))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("状態：")]), _vm._v(" "), (_vm.lending_books.condition = true) ? _c("td", [_vm._v("保管中")]) : (_vm.lending_books.condition = false) ? _c("td", [_vm._v("貸出中")]) : _vm._e()]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.remarks))])])]);
+  return _c("div", {
+    staticClass: "content"
+  }, [_c("table", [_c("tr", [_c("th", [_vm._v("著者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.author))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.translator))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.publisher))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.publication_date))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.keyword))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.isbn))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("図書ID：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.book_id))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.register_date))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("状態：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.condition))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.remarks))])])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2766,7 +2769,11 @@ var render = function render() {
     staticClass: "container"
   }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("貸出中図書一覧")]), _vm._v(" "), _c("lendingList", {
     attrs: {
-      bookcatalog: _vm.bookcatalog
+      lending_books: _vm.lending_books
+    }
+  }), _vm._v(" "), _c("lendingList", {
+    attrs: {
+      lending_books: _vm.bookcatalog
     }
   }), _vm._v(" "), _c("table", [_c("button", {
     staticClass: "btn btn-primary",

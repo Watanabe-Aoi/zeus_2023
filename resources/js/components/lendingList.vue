@@ -1,5 +1,7 @@
 <template>
+    <div class="content">
     <table>
+    <!-- <table v-for="lending_book in lending_books"> -->
         <tr>
             <th>著者：</th>
             <td>{{ lending_books.author }}</td>
@@ -34,14 +36,16 @@
             <td></td>
             <td></td>
             <th>状態：</th>
-            <td v-if="lending_books.condition = true">保管中</td>
-            <td v-else-if="lending_books.condition = false">貸出中</td>
+            <td>{{ lending_books.condition }}</td>
+            <!-- <td v-if="lending_book.condition = true">保管中</td>
+            <td v-else-if="lending_book.condition = false">貸出中</td> -->
         </tr>
         <tr>
             <th>備考：</th>
             <td>{{ lending_books.remarks }}</td>
         </tr>
     </table>
+</div>
 </template>
 
 <script>

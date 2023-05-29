@@ -25,8 +25,8 @@ class BookCatalogTableSeeder extends Seeder
             'keyword' => 'Ruby',
             'memo' => '',
             'data_creator' => '98-76-54',
-            'data_create_date' => '',
+            'data_create_date' => '11111',
         ];
-        DB::table('book_catalog')->insert($param);
+        \DB::table('book_catalog')->insert($param);
     }
 }

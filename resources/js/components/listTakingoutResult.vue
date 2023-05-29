@@ -3,7 +3,8 @@
     <HeadContent />
     
     <h1>貸出中図書一覧</h1>
-    <lendingList :bookcatalog="bookcatalog"/>
+    <lendingList :lending_books="lending_books"/>
+    <lendingList :lending_books="bookcatalog"/>
     <table>
 
         <button class="btn btn-primary" @click="returnCheck()">この本を返却する</button>
@@ -30,7 +31,7 @@ export default{
     
     data(){
         return {
-            bookcatalog: [
+            lending_books: 
                 {
                     author: '森塚',
                     translator: '',
@@ -42,8 +43,10 @@ export default{
                     register_date: '2023-05-25',
                     condition: '貸出中',
                     remarks: '',
-                }
-            ]
+                },
+
+                bookcatalog: []
+            
 
         }
     },

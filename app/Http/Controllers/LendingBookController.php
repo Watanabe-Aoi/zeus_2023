@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class LendingBookController extends Controller
 {
     public function index(Reqest $request){
-        $bookcatalog = bookcatalog::all();
+        $bookcatalog = book_catalog::all();
         return [
             'bookcatalog' => $bookcatalog
         ];
