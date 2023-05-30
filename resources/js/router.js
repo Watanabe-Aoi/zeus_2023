@@ -11,9 +11,10 @@ import confirmAddForm from './components/confirmAddForm';
 import addSuccess from './components/addSuccess';
 import LoginPage from './components/LoginPage';
 import Logouted from './components/Logouted';
+import SearchResult from './components/SearchResult';
 
 const routes = [
-   
+
    {
       path: "/addForm",
       component: addForm,
@@ -67,7 +68,11 @@ const routes = [
       component: returnSuccess,
       name: "returnSuccess",
    },
-   
+   {
+      path: "/searchResult",
+      component: SearchResult,
+      name: "searchResult",
+   },
 ];
 
 const router = new VueRouter({

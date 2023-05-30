@@ -2,7 +2,7 @@
     <table>
         <HeadContent />
         <div>
-            <tr>{{ count }}件見つかりました。</tr>
+            <tr></tr>
             <tr>
                 <ListTakingoutResult />
             </tr>
@@ -15,7 +15,6 @@
 
 import FootText from './FootText.vue';
 import HeadContent from './HeadContent.vue';
-import ListTakingoutResult from './listTakingoutResult.vue';
 import axios from 'axios';
 
 export default {
@@ -23,13 +22,6 @@ export default {
     components: {
         HeadContent,
         FootText,
-        ListTakingoutResult,
     },
-    data() {
-        return {
-            count: 0,
-        }
-    },
-}
 
 </script>
