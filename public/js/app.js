@@ -3573,17 +3573,7 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var store = {
   state: {
-    new_book: [],
-    statusId: [{
-      id: 1,
-      text: '保管中'
-    }, {
-      id: 2,
-      text: '貸出中'
-    }, {
-      id: 3,
-      text: '紛失'
-    }]
+    new_book: []
   },
   mutations: {
     confirmInsertBook: function confirmInsertBook(state, new_book) {
