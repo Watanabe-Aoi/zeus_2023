@@ -14,18 +14,10 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-<<<<<<< HEAD
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
-=======
-            $table->string('user_id')->primary();
-            $table->string('password');
-<<<<<<< HEAD
->>>>>>> 34e506f1850c7e162e177895d8580ee379a9a0b6
-=======
-            $table->timestamps();
->>>>>>> 999e06cb3d20fd108c7e9bd86ef95485528aaf64
+            $table->string('user_id')->nullable(false);
+            $table->string('user_name')->nullable(false);
+            $table->string('password')->nullable(false);
+            $table->timestamp();    // created_at updated_atフィールドを自動設定
         });
     }
 

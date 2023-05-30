@@ -9,6 +9,8 @@ import confirmReturnForm from './components/confirmReturnForm';
 import returnSuccess from './components/returnSuccess';
 import confirmAddForm from './components/confirmAddForm';
 import addSuccess from './components/addSuccess';
+import LoginPage from './components/LoginPage';
+import Logouted from './components/Logouted';
 
 const routes = [
    
@@ -34,6 +36,16 @@ const routes = [
       path: "/",
       component: TopMenu,
       name: "TOP",
+   },
+   {
+      path: "/loginpage",
+      component: LoginPage,
+      name: "loginpage",
+   },
+   {
+      path: "/logouted",
+      component: Logouted,
+      name: "logouted",
    },
    {
       path: "/searchForm",

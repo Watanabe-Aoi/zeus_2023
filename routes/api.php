@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookCOntroller;
 
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/bookcatalog',[LendingBookController::class, 'index']);
 route::post('/insertBook',[BookController::class, 'addBook']);
+Route::post('/tryLogin', [UserController::class, 'authenticate']);

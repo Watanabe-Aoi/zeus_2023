@@ -14,8 +14,8 @@ Vue.use(VueRouter).use(Toasted, {
 
 const app = new Vue({
     el: '#app',
-    router,
-    store
+    store,
+    router
 });
 
 

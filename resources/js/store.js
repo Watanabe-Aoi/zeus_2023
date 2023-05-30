@@ -11,10 +11,20 @@ const store = {
             mutations:{
                 confirmInsertBook(state, new_book){
                     state.new_book = new_book;
-                    }
+                    },
+                    login(state, user) {
+                     state.logining = true;
+                     state.user_id = user.id;
+                  },
+                  logout(state) {
+                     state.logining = false;
+                     state.user_id = '';
+                  },
             }
-        }
+
+
+
+
+   }
+
 export default new Vuex.Store(store);
-
-
-
