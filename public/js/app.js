@@ -2109,6 +2109,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     toLink: function toLink(link) {
       this.$router.push(link)["catch"](function (err) {});
+      // 引数 link ← router.jsに登録したnameを代入
     }
   }
 });
