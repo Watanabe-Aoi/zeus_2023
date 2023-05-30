@@ -7,7 +7,6 @@ import store from './store.js';
 
 import Vue from 'vue';
 import Vuex from 'vuex';
-
 Vue.use(VueRouter).use(Toasted, {
     position: 'bottom-center',
     duration: 2000,
@@ -18,3 +17,5 @@ const app = new Vue({
     store,
     router
 });
+
+
