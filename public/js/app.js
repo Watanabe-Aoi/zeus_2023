@@ -2054,6 +2054,51 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
+/* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      edited_books: {
+        book_id: '',
+        code: '',
+        title: '',
+        author: '',
+        translator: '',
+        publisher: '',
+        publicationdate: '',
+        user_id: '',
+        datacreateddate: '',
+        status: '',
+        keyword: '',
+        memo: ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -2600,6 +2645,269 @@ __webpack_require__.r(__webpack_exports__);
     };
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render),
+/* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", [_c("tr", [_c("th", [_vm._v("図書ID：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.book_id,
+      expression: "edited_books.book_id"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.book_id
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "book_id", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.code,
+      expression: "edited_books.code"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.code
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "code", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("タイトル*：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.title,
+      expression: "edited_books.title"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.title
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "title", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("著者：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.author,
+      expression: "edited_books.author"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.author
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "author", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.translator,
+      expression: "edited_books.translator"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.translator
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "translator", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.publisher,
+      expression: "edited_books.publisher"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.publisher
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "publisher", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.publicationdate,
+      expression: "edited_books.publicationdate"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.publicationdate
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "publicationdate", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録者：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.userid,
+      expression: "edited_books.userid"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.userid
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "userid", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.datacreateddate,
+      expression: "edited_books.datacreateddate"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.datacreateddate
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "datacreateddate", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("状態：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.status,
+      expression: "edited_books.status"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.status
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "status", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.keyword,
+      expression: "edited_books.keyword"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.keyword
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "keyword", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.edited_books.memo,
+      expression: "edited_books.memo"
+    }],
+    attrs: {
+      type: "text",
+      value: "lending_books.author"
+    },
+    domProps: {
+      value: _vm.edited_books.memo
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.edited_books, "memo", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("FootText")], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
 
 /***/ }),
 
@@ -3488,7 +3796,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_ExampleComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/ExampleComponent */ "./resources/js/components/ExampleComponent.vue");
 /* harmony import */ var _components_addForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/addForm */ "./resources/js/components/addForm.vue");
 /* harmony import */ var _components_SearchForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SearchForm */ "./resources/js/components/SearchForm.vue");
@@ -3501,6 +3809,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_LoginPage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/LoginPage */ "./resources/js/components/LoginPage.vue");
 /* harmony import */ var _components_Logouted__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Logouted */ "./resources/js/components/Logouted.vue");
 /* harmony import */ var _components_SearchResult__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/SearchResult */ "./resources/js/components/SearchResult.vue");
+/* harmony import */ var _components_EditForm__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/EditForm */ "./resources/js/components/EditForm.vue");
+
 
 
 
@@ -3561,8 +3871,12 @@ var routes = [{
   path: "/searchResult",
   component: _components_SearchResult__WEBPACK_IMPORTED_MODULE_11__["default"],
   name: "searchResult"
+}, {
+  path: "/editForm",
+  component: _components_EditForm__WEBPACK_IMPORTED_MODULE_12__["default"],
+  name: "editForm"
 }];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_12__["default"]({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_13__["default"]({
   mode: 'history',
   routes: routes
 });
@@ -39255,6 +39569,45 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./resources/js/components/EditForm.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/EditForm.vue ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditForm.vue?vue&type=template&id=64596f4e& */ "./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e&");
+/* harmony import */ var _EditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditForm.vue?vue&type=script&lang=js& */ "./resources/js/components/EditForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__.render,
+  _EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/EditForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue ***!
@@ -39844,6 +40197,22 @@ component.options.__file = "resources/js/components/returnSuccess.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/EditForm.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/EditForm.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./EditForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -40065,6 +40434,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_returnSuccess_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./returnSuccess.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/returnSuccess.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_returnSuccess_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   staticRenderFns: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./EditForm.vue?vue&type=template&id=64596f4e& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e&");
+
 
 /***/ }),
 

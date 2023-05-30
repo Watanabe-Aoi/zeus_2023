@@ -12,7 +12,7 @@ import addSuccess from './components/addSuccess';
 import LoginPage from './components/LoginPage';
 import Logouted from './components/Logouted';
 import SearchResult from './components/SearchResult';
-
+import EditForm from './components/EditForm';
 const routes = [
 
    {
@@ -72,6 +72,11 @@ const routes = [
       path: "/searchResult",
       component: SearchResult,
       name: "searchResult",
+   },
+   {
+      path: "/editForm",
+      component: EditForm,
+      name: "editForm",
    },
 ];
 
