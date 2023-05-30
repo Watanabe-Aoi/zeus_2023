@@ -2,8 +2,8 @@
     <div class="container">
         <HeadContent />
         <h1>この図書の返却手続きをします</h1>
-        <lendingList :lending_books="bookcatalog" />
         <table>
+            <lendingList :lending_books="bookcatalog" />
             <button class="btn btn-primary">返却する</button>
             <router-link to="listTakingoutResult">戻る</router-link>
         </table>

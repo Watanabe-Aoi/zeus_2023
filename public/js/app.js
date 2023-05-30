@@ -2315,12 +2315,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     returnBook: function returnBook() {},
-    deleteBook: function deleteBook(book_id) {
+    deleteBook: function deleteBook(lending_book) {
       var _this2 = this;
       // console.log(book_id);
-      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog', this.book_id).then(function (response) {
+      // console.log(this.book_id);
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog', lending_book).then(function (response) {
+        // console.log(response.data.book_catalog);
         _this2.lending_books = response.data.book_catalog;
-        console.log(_this2.lending_books);
+        // console.log(this.lending_books);
       });
     }
   }
@@ -2707,11 +2709,11 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("この図書の返却手続きをします")]), _vm._v(" "), _c("lendingList", {
+  }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("この図書の返却手続きをします")]), _vm._v(" "), _c("table", [_c("lendingList", {
     attrs: {
       lending_books: _vm.bookcatalog
     }
-  }), _vm._v(" "), _c("table", [_c("button", {
+  }), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary"
   }, [_vm._v("返却する")]), _vm._v(" "), _c("router-link", {
     attrs: {
@@ -2777,14 +2779,14 @@ var render = function render() {
       staticClass: "btn btn-primary",
       on: {
         click: function click($event) {
-          return _vm.deleteBook(lending_book.book_id);
+          return _vm.deleteBook(lending_book);
         }
       }
     }, [_vm._v("削除")]), _vm._v(" "), _c("button", {
       staticClass: "btn btn-primary",
       on: {
         click: function click($event) {
-          return _vm.returnCheck();
+          return _vm.returnCheck(lending_book);
         }
       }
     }, [_vm._v("この本を返却する")]), _vm._v(" "), _c("button", {

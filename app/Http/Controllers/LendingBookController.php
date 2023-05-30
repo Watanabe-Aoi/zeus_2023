@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use Illuminate\Http\Request;
-use App\Models\book_catalog;
 
 class LendingBookController extends Controller
 {
     public function index(Request $request){
+        $book_catalog = \DB::select('select * from book_catalog');
         return [
-            'book_catalog' => $book_catalog = \DB::select('select * from book_catalog'),
+            'book_catalog' => $book_catalog
         ];
     }
 
     public function deleteBook(Request $request){
-        // \DB::table('book_catalog')->where('id',$request->all())
+        \DB::table('book_catalog')->where('book_id',$request->book_id)->delete();
+        $book_catalog = \DB::select('select * from book_catalog');
         return[
-            'book_catalog' => $book_catalog = $request->all(),
+            'book_catalog' => $book_catalog,
         ];
+           
     }
 
     public function returnBook(){
