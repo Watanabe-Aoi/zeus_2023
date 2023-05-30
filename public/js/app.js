@@ -2314,15 +2314,16 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    returnBook: function returnBook() {},
-    deleteBook: function deleteBook(lending_book) {
+    returnBook: function returnBook(lending_book) {
       var _this2 = this;
-      // console.log(book_id);
-      // console.log(this.book_id);
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/return', lending_book).then(function (response) {
+        _this2.lending_book = response.data.book_catalog;
+      });
+    },
+    deleteBook: function deleteBook(lending_book) {
+      var _this3 = this;
       axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog', lending_book).then(function (response) {
-        // console.log(response.data.book_catalog);
-        _this2.lending_books = response.data.book_catalog;
-        // console.log(this.lending_books);
+        _this3.lending_books = response.data.book_catalog;
       });
     }
   }
@@ -2819,7 +2820,7 @@ var render = function render() {
     staticClass: "container"
   }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("返却手続きが完了しました")]), _vm._v(" "), _c("lendingList", {
     attrs: {
-      bookcatalog: _vm.bookcatalog
+      lending_book: _vm.bookcatalog
     }
   }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("router-link", {
     attrs: {

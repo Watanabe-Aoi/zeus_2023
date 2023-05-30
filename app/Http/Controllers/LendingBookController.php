@@ -23,7 +23,7 @@ class LendingBookController extends Controller
            
     }
 
-    public function returnBook(){
+    public function returnBook(Request $request){
 
         \DB::table('book_catalog')->where('id',$bookid)->update(['status' => true]);
         $book_catalog = book_catalog::all();

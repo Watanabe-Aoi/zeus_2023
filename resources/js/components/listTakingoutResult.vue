@@ -43,17 +43,15 @@ export default {
     },
 
     methods: {
-        returnBook(){
-
+        returnBook(lending_book){
+            axios.post('/api/return', lending_book).then(response => {
+                this.lending_book = response.data.book_catalog;
+            })
         },
 
         deleteBook(lending_book) {
-            // console.log(book_id);
-            // console.log(this.book_id);
             axios.post('/api/book_catalog',lending_book).then(response => {
-                // console.log(response.data.book_catalog);
                 this.lending_books = response.data.book_catalog;
-                // console.log(this.lending_books);
             })
         }
     }
