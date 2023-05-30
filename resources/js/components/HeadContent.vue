@@ -39,6 +39,7 @@ export default {
       },
 
       toLink(link) {
+         
          this.$router.push(link).catch(err => {});
          // 引数 link ← router.jsに登録したnameを代入
       },

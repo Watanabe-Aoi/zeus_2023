@@ -14,12 +14,12 @@ class CreateTakeOutRecordsTable extends Migration
     public function up()
     {
         Schema::create('take_out_records', function (Blueprint $table) {
-            $table->id()->primaryKey();
-            $table->foreignID('book_id')->constraint('book_catalog');
-            $table->foreignID('user_id')->constraint('users');
+            $table->id();
+            $table->foreignId('book_id')->constaint('book_catalog');
+            $table->foreignId('user_id')->constaint('users');
             $table->dateTime('takeout_date');
-            $table->dateTime('returndate')->nullable();
-            $table->timestamps();    // created_at updated_atフィールドを自動設定
+            $table->dateTime('returned_date')->nullable();
+            $table->timestamps();
         });
     }
 
