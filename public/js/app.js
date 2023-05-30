@@ -2215,6 +2215,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
 /* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2224,8 +2227,19 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      value: ''
+      value: '',
+      book_catalogs: []
     };
+  },
+  //テスト組んでるだけです
+  mounted: function mounted() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_2___default().get('/api/search').then(function (response) {
+      _this.book_catalogs = response.data.book_catalogs;
+    })["catch"](function (error) {
+      console.log('error');
+    });
+    this.$toasted.success('うごきました');
   }
 });
 
@@ -2564,9 +2578,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", {
-    staticClass: "h"
-  }, [_c("Tr", [_c("th", [_vm._v("検索範囲：")]), _vm._v(" "), _c("select", {
+  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", [_c("Tr", [_c("th", [_vm._v("検索範囲：")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2598,34 +2610,34 @@ var render = function render() {
     }
   }, [_vm._v("著者")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "1"
+      value: "4"
     }
   }, [_vm._v("訳者")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "2"
+      value: "5"
     }
   }, [_vm._v("出版社")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "3"
+      value: "6"
     }
   }, [_vm._v("出版日")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "1"
+      value: "7"
     }
   }, [_vm._v("ISBN番号")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "2"
+      value: "8"
     }
   }, [_vm._v("備考")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "3"
+      value: "9"
     }
   }, [_vm._v("キーワード")])])]), _vm._v(" "), _c("Tr", [_c("th", [_vm._v("検索語：")]), _vm._v(" "), _c("input", {
     attrs: {
       type: "text",
-      name: "serchvv"
+      name: "serchword"
     }
-  })]), _vm._v(" "), _c("tr", [_c("p", [_vm._v(_vm._s(_vm.value))])])], 1), _vm._v(" "), _c("Foottext")], 1);
+  })]), _vm._v(" "), _c("tr", [_c("p", [_vm._v(_vm._s(_vm.value))])]), _vm._v(" "), _c("tr", [_vm._v("\n            aqaq" + _vm._s(this.book_catalogs) + "\n        ")])], 1), _vm._v(" "), _c("FootText")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2693,46 +2705,44 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", {
-    staticClass: "container"
-  }, [_c("HeadContent"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("FootText")], 1);
+  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", [_vm._m(0), _vm._v(" "), _c("FootText")], 1)], 1);
 };
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("table", [_c("tr", [_c("th", [_vm._v("新規図書登録")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN:")]), _c("td", [_c("input", {
+  return _c("table", [_c("tr", [_c("th", [_vm._v("新規図書登録")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })]), _c("td", [_vm._v("例：ISBN1-2345-6789-X")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("タイトル:")]), _c("td", [_c("input", {
+  })]), _vm._v(" "), _c("td", [_vm._v("例：ISBN1-2345-6789-X")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("タイトル:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("著者:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("著者:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })]), _c("td", [_vm._v("例：2003-04-05")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード:")]), _c("td", [_c("input", {
+  })]), _vm._v(" "), _c("td", [_vm._v("例：2003-04-05")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考:")]), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考:")]), _vm._v(" "), _c("td", [_c("input", {
     attrs: {
       type: "text"
     }
-  })])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("・印の項目は必ず入力してください。")])]), _vm._v(" "), _c("tr", [_c("td", [_c("button", [_vm._v("登録")])])])])]);
+  })])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("・印の項目は必ず入力してください。")])]), _vm._v(" "), _c("tr", [_c("td", [_c("button", [_vm._v("登録")])])])]);
 }];
 render._withStripped = true;
 
