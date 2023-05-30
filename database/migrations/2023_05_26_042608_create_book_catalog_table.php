@@ -14,7 +14,7 @@ class CreateBookCatalogTable extends Migration
     public function up()
     {
         Schema::create('book_catalog', function (Blueprint $table) {
-            $table->string('book_id')->primaryKey();
+            $table->bigIncrements('book_id')->primaryKey();
             $table->string('title');
             $table->string('author');   // 著者
             $table->string('translator');   // 訳者
