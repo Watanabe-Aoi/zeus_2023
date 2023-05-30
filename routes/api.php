@@ -21,10 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-<<<<<<< HEAD
 Route::post('/tryLogin', [UserController::class, 'authenticate']);
-=======
+
 Route::get('/search',[SearchController::class, 'searchIndex']);
 
 //Route::get('/search',[SearchController::class, 'index']);
->>>>>>> 9cb270fb4ff8c2d9a1eb04eca99ee24b451c672c
