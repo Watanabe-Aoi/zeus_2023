@@ -20,10 +20,4 @@ class SearchController extends Controller
             'bookcatalogs' => $bookcatalogs,
         ];
     }
-
-    public function index(Request $request){
-        //dd("hello");
-        $users = user::all();
-        dd($users);
-    }
 }
