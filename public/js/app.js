@@ -2379,7 +2379,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      lending_books: {
+      new_book: {
         author: this.$route.params.book.author,
         translator: this.$route.params.book.translater,
         publisher: this.$route.params.book.publisher,
@@ -2395,12 +2395,12 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     insertBook: function insertBook() {
       var _this = this;
-      axios__WEBPACK_IMPORTED_MODULE_3___default().get('/api/book_catalog/insertBook', this.new_book).then(function (response) {
-        _this.books = response.data.books;
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog/insertBook', this.new_book).then(function (response) {
+        _this.new_book = response.data.new_book;
         _this.$router.push({
           path: '/addSuccess'
         });
-      });
+      })["catch"]();
     }
   }
 });
@@ -3178,7 +3178,7 @@ var render = function render() {
     staticClass: "container"
   }, [_c("HeadContent"), _vm._v(" "), _c("table", [_vm._m(0), _vm._v(" "), _c("lendingList", {
     attrs: {
-      lending_books: _vm.lending_books
+      lending_books: _vm.new_book
     }
   }), _vm._v(" "), _c("tr", [_c("td", [_c("button", {
     on: {

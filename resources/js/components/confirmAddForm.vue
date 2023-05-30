@@ -4,7 +4,7 @@
         <HeadContent />
             <table>
                 <tr><th>この内容で登録しますか？</th></tr>
-                <lendingList :lending_books="lending_books"/>
+                <lendingList :lending_books="new_book"/>
                 <tr><td><button @click="insertBook()">登録</button></td></tr>
                 <router-link to="/addForm">修正</router-link>
             </table>
@@ -29,7 +29,7 @@ export default{
     },
     data(){
         return{
-            lending_books: 
+            new_book: 
                 {
                     author: this.$route.params.book.author,
                     translator: this.$route.params.book.translater,
@@ -47,9 +47,11 @@ export default{
 
     methods:{
         insertBook(){
-            axios.get('/api/book_catalog/insertBook',this.new_book).then(response =>{
-                this.books = response.data.books; this.$router.push({ path: '/addSuccess'});
-            });
+            axios.post('/api/book_catalog/insertBook',this.new_book).then(response =>{
+                this.new_book = response.data.new_book; 
+                this.$router.push({ path: '/addSuccess'}
+                );
+            }).catch();
         },
     }
     
