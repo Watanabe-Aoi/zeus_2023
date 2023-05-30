@@ -2228,6 +2228,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       value: '',
+      search_word: '',
       book_catalogs: []
     };
   },
@@ -2598,44 +2599,59 @@ var render = function render() {
     }
   }, [_c("option", {
     attrs: {
-      value: "1"
+      value: "book_id"
     }
   }, [_vm._v("図書ID")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "2"
+      value: "title"
     }
   }, [_vm._v("タイトル")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "3"
+      value: "author"
     }
   }, [_vm._v("著者")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "4"
+      value: "translator"
     }
   }, [_vm._v("訳者")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "5"
+      value: "publisher"
     }
   }, [_vm._v("出版社")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "6"
+      value: "publication_date"
     }
   }, [_vm._v("出版日")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "7"
+      value: "code"
     }
   }, [_vm._v("ISBN番号")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "8"
+      value: "memo"
     }
   }, [_vm._v("備考")]), _vm._v(" "), _c("option", {
     attrs: {
-      value: "9"
+      value: "keyword"
     }
   }, [_vm._v("キーワード")])])]), _vm._v(" "), _c("Tr", [_c("th", [_vm._v("検索語：")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.search_word,
+      expression: "search_word"
+    }],
     attrs: {
       type: "text",
       name: "serchword"
+    },
+    domProps: {
+      value: _vm.search_word
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.search_word = $event.target.value;
+      }
     }
   })]), _vm._v(" "), _c("tr", [_c("p", [_vm._v(_vm._s(_vm.value))])]), _vm._v(" "), _c("tr", [_vm._v("\n            aqaq" + _vm._s(this.book_catalogs) + "\n        ")])], 1), _vm._v(" "), _c("FootText")], 1);
 };
@@ -2662,29 +2678,21 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("HeadContent"), _vm._v(" "), _c("h2", [_vm._v("図書管理システムメニュー")]), _vm._v(" "), _c("ul", [_c("li", [_c("router-link", {
-    staticClass: "btn btn-link",
-    attrs: {
-      to: ""
-    }
-  }, [_vm._v("検索")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
-    staticClass: "btn btn-link",
-    attrs: {
-      to: ""
-    }
-  }, [_vm._v("全図書一覧")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
-    staticClass: "btn btn-link",
-    attrs: {
-      to: ""
-    }
-  }, [_vm._v("貸出図書一覧")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
-    staticClass: "btn btn-link",
-    attrs: {
-      to: ""
-    }
-  }, [_vm._v("新規図書登録")])], 1)]), _vm._v(" "), _c("FootText")], 1);
+  }, [_c("HeadContent"), _vm._v(" "), _c("h2", [_vm._v("図書管理システムメニュー")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("FootText")], 1);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("ul", [_c("li", [_c("button", {
+    staticClass: "btn btn-link"
+  }, [_vm._v("検索")])]), _vm._v(" "), _c("li", [_c("button", {
+    staticClass: "btn btn-link"
+  }, [_vm._v("全図書一覧")])]), _vm._v(" "), _c("li", [_c("button", {
+    staticClass: "btn btn-link"
+  }, [_vm._v("貸出図書一覧")])]), _vm._v(" "), _c("li", [_c("button", {
+    staticClass: "btn btn-link"
+  }, [_vm._v("新規図書登録")])])]);
+}];
 render._withStripped = true;
 
 
