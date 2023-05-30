@@ -20,7 +20,7 @@
             </Tr>
             <Tr>
                 <th>検索語：</th>
-                <input type="text" name="serchvv">
+                <input type="text" name="serchword">
             </Tr>
             <tr>
                 <p>{{ value }}</p>

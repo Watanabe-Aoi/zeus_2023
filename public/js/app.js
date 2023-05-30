@@ -2422,7 +2422,7 @@ var render = function render() {
   }, [_vm._v("キーワード")])])]), _vm._v(" "), _c("Tr", [_c("th", [_vm._v("検索語：")]), _vm._v(" "), _c("input", {
     attrs: {
       type: "text",
-      name: "serchvv"
+      name: "serchword"
     }
   })]), _vm._v(" "), _c("tr", [_c("p", [_vm._v(_vm._s(_vm.value))])]), _vm._v(" "), _c("tr", [_vm._v("\n            aqaq" + _vm._s(this.book_catalogs) + "\n        ")])], 1), _vm._v(" "), _c("FootText")], 1);
 };
