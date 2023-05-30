@@ -1,43 +1,71 @@
 <template>
    <div class="HeadContent">
-      <span class="textLarge">【bCat】図書管理システム</span>
-      <span class="user">ユーザー:{{ this.user.name }}</span>
-      <table>
-         <tr>
-            <td><router-link to="/" class="btn btn-link">メニュー</router-link></td>
-            <td><router-link to="" class="btn btn-link">検索</router-link></td>
-            <td><router-link to="" class="btn btn-link">全図書一覧</router-link></td>
-            <td><router-link to="" class="btn btn-link">貸出図書一覧</router-link></td>
-            <td><router-link to="" class="btn btn-link">新規図書登録</router-link></td>
-            <td><router-link to="" class="btn btn-link">ログイン</router-link></td>
-         </tr>
-      </table>
+      <div class="title">
+         <span id="title-text">【bCat】図書管理システム</span>
+         <span v-if="this.$store.state.logining" class="user">ユーザー:{{ this.$store.state.user_id }}</span>
+      </div>
+      <div class="menu">
+         <button @click="toLink('/')" class="btn btn-link">メニュー</button>
+         <span>|</span>
+         <button @click="toLink('')" class="btn btn-link">検索</button>
+         <span>|</span>
+         <button @click="toLink('')" class="btn btn-link">全図書一覧</button>
+         <span>|</span>
+         <button @click="toLink('')" class="btn btn-link">貸出図書一覧</button>
+         <span>|</span>
+         <button @click="toLink('')" class="btn btn-link">新規図書登録</button>
+         <span>||</span>
+         <button @click="loginingChange" class="btn btn-link">{{ login_logout_message }}</button>
+      </div>
    </div>
 </template>
 
 <script>
-import { RouterLink } from 'vue-router';
-
-
 export default {
-    data() {
-        return {
-            user: {
-                name: "sample",
-            },
-        };
-    },
-    components: { RouterLink }
+   computed: {
+      login_logout_message() {
+         return this.$store.state.logining? 'ログアウト' : 'ログイン';
+      },
+   },
+
+   methods: {
+      loginingChange() {
+         if(this.$store.state.logining){
+            this.$store.commit('logout');
+            this.toLink('logouted');
+         } else {
+            this.toLink('loginpage');
+         }
+      },
+
+      toLink(link) {
+         this.$router.push(link).catch(err => {});
+         // 引数 link ← router.jsに登録したnameを代入
+      },
+   }
 }
 </script>
 
 <style>
-.Title {
-   background-color: rgb(59, 192, 59);
+.title {
+   width: 100%;
+   background-color: rgb(20, 172, 20);
    color: white;
 }
 
-.textLarge {
-   font-size: large;
+#title-text {
+   font-size: larger;
+}
+
+.user {
+   right: 10px;
+   float: right;
+}
+
+.menu {
+   display: inline-block;
+   width: 100%;
+   background-color: rgb(196, 195, 195);
+   text-align: right;
 }
 </style>
