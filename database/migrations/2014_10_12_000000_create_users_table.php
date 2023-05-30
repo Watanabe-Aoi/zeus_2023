@@ -14,10 +14,9 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->string('user_id')->nullable(false);
-            $table->string('user_name')->nullable(false);
-            $table->string('password')->nullable(false);
-            $table->timestamp();    // created_at updated_atフィールドを自動設定
+            $table->string('user_id')->primary();
+            $table->string('password');
+            $table->timestamps();
         });
     }
 
