@@ -16,16 +16,19 @@ const routes = [
       path: "/addForm",
       component: addForm,
       name: "addForm",
+      props: true,
    },
    {
       path: "/confirmAddForm",
       component: confirmAddForm,
-      name: "confirmAddForm"
+      name: "confirmAddForm",
+      props: true
    },
    {
       path: "/addSuccess",
       component: addSuccess,
-      name: "addSuccess"
+      name: "addSuccess",
+      props: true
    },
    {
       path: "/",

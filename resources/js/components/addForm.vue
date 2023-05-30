@@ -23,13 +23,14 @@
 <script>
 import FootText from './FootText.vue'
 import HeadContent from './HeadContent.vue';
-import confirmAddFormVue from './confirmAddForm.vue';
-import VueRouter from "vue-router";
 
 export default{
+    
     components: {
         HeadContent,
         FootText,
+        // addForm,
+        // ConfirmAddFrom
     
     },
     data(){
@@ -43,6 +44,7 @@ export default{
                 publicationdate: '',
                 keyword: '',
                 memo: '',
+                
             }
 
         }
@@ -52,11 +54,14 @@ export default{
     methods:{
         addNewBook(book){
             // this.$store.commit('confirmInsertBook', new_book);
-            this.$router.push({ path: '/confirmAddForm', query: {book}});
-            // console.log(book);
+            this.$router.push({ name: 'confirmAddForm', params:{book}});
+         
         },
     }
-    
 }
 
 </script>
+
+<style>
+
+</style>

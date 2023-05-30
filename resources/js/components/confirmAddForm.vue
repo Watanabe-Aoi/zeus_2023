@@ -16,13 +16,11 @@
 import FootText from './FootText.vue'
 import HeadContent from './HeadContent.vue';
 import lendingList from './lendingList.vue';
-import addForm from './addForm.vue';
+import axios from 'axios';
 
 
 export default{
-    props:{
-        new_book:[],
-    },
+    props:['book'],
     
     components: {
         HeadContent,
@@ -33,34 +31,35 @@ export default{
         return{
             lending_books: 
                 {
-                    author: '森塚',
-                    translator: '',
-                    publisher: 'ゼウス',
-                    publication_date: '2002-12-04',
-                    keyword: 'プログラミング',
-                    isbn: 'ISBN123456',
-                    book_id: '20230525',
-                    register_date: '2023-05-25',
-                    condition: '貸出中',
-                    remarks: '',
+                    author: this.$route.params.book.author,
+                    translator: this.$route.params.book.translater,
+                    publisher: this.$route.params.book.publisher,
+                    publication_date: this.$route.params.book.publicationdate,
+                    keyword: this.$route.params.book.keyword,
+                    isbn: this.$route.params.book.code,
+                    book_id:'',
+                    condition: '〇保管中',
+                    remarks: this.$route.params.book.memo,
                 },
         }
     },
 
+
     methods:{
         insertBook(){
-            console.log(book);
-            this.$router.push({ path: '/addSuccess'});
-            // axios.post('/api/books/insertBook',this.new_book).then(response =>{
-            //     this.books = response.data.books;
-            // });
-
+            axios.get('/api/book_catalog/insertBook',this.new_book).then(response =>{
+                this.books = response.data.books; this.$router.push({ path: '/addSuccess'});
+            });
         },
     }
     
 }
 
 </script>
+
+<style>
+
+</style>
 
 
 

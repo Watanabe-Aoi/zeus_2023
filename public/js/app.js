@@ -2175,15 +2175,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
 /* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
-/* harmony import */ var _confirmAddForm_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./confirmAddForm.vue */ "./resources/js/components/confirmAddForm.vue");
-
-
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    // addForm,
+    // ConfirmAddFrom
   },
   data: function data() {
     return {
@@ -2203,12 +2202,11 @@ __webpack_require__.r(__webpack_exports__);
     addNewBook: function addNewBook(book) {
       // this.$store.commit('confirmInsertBook', new_book);
       this.$router.push({
-        path: '/confirmAddForm',
-        query: {
+        name: 'confirmAddForm',
+        params: {
           book: book
         }
       });
-      // console.log(book);
     }
   }
 });
@@ -2253,7 +2251,7 @@ __webpack_require__.r(__webpack_exports__);
         remarks: ''
       }
     };
-  } // methods:{}
+  }
 });
 
 /***/ }),
@@ -2272,15 +2270,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
 /* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
 /* harmony import */ var _lendingList_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lendingList.vue */ "./resources/js/components/lendingList.vue");
-/* harmony import */ var _addForm_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addForm.vue */ "./resources/js/components/addForm.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: {
-    new_book: []
-  },
+  props: ['book'],
   components: {
     HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -2289,28 +2286,27 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       lending_books: {
-        author: '森塚',
-        translator: '',
-        publisher: 'ゼウス',
-        publication_date: '2002-12-04',
-        keyword: 'プログラミング',
-        isbn: 'ISBN123456',
-        book_id: '20230525',
-        register_date: '2023-05-25',
-        condition: '貸出中',
-        remarks: ''
+        author: this.$route.params.book.author,
+        translator: this.$route.params.book.translater,
+        publisher: this.$route.params.book.publisher,
+        publication_date: this.$route.params.book.publicationdate,
+        keyword: this.$route.params.book.keyword,
+        isbn: this.$route.params.book.code,
+        book_id: '',
+        condition: '〇保管中',
+        remarks: this.$route.params.book.memo
       }
     };
   },
   methods: {
     insertBook: function insertBook() {
-      console.log(book);
-      this.$router.push({
-        path: '/addSuccess'
+      var _this = this;
+      axios__WEBPACK_IMPORTED_MODULE_3___default().get('/api/book_catalog/insertBook', this.new_book).then(function (response) {
+        _this.books = response.data.books;
+        _this.$router.push({
+          path: '/addSuccess'
+        });
       });
-      // axios.post('/api/books/insertBook',this.new_book).then(response =>{
-      //     this.books = response.data.books;
-      // });
     }
   }
 });
@@ -2712,7 +2708,7 @@ var render = function render() {
   }, [_vm._v("貸出図書一覧")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "btn btn-link",
     attrs: {
-      to: ""
+      to: "/addForm"
     }
   }, [_vm._v("新規図書登録")])], 1)]), _vm._v(" "), _c("FootText")], 1);
 };
@@ -2936,7 +2932,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("router-link", {
     attrs: {
-      to: "/TopMenu"
+      to: "/"
     }
   }, [_vm._v("戻る")])], 1), _vm._v(" "), _c("FootText")], 1);
 };
@@ -3234,15 +3230,18 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: "/addForm",
   component: _components_addForm__WEBPACK_IMPORTED_MODULE_1__["default"],
-  name: "addForm"
+  name: "addForm",
+  props: true
 }, {
   path: "/confirmAddForm",
   component: _components_confirmAddForm__WEBPACK_IMPORTED_MODULE_7__["default"],
-  name: "confirmAddForm"
+  name: "confirmAddForm",
+  props: true
 }, {
   path: "/addSuccess",
   component: _components_addSuccess__WEBPACK_IMPORTED_MODULE_8__["default"],
-  name: "addSuccess"
+  name: "addSuccess",
+  props: true
 }, {
   path: "/",
   component: _components_TopMenu__WEBPACK_IMPORTED_MODULE_3__["default"],

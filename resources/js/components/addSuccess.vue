@@ -10,7 +10,7 @@
                 <td><button @click="編集画面へ">編集</button></td>
                 <td><button @click="削除画面へ">削除</button></td>
                 </tr> -->
-                <router-link to="/TopMenu">戻る</router-link>
+                <router-link to="/">戻る</router-link>
             </table>
         <FootText />
     </div>
@@ -44,16 +44,16 @@ export default{
                     condition: '貸出中',
                     remarks: '',
                 },
+                
         }
     },
-
-
-    // methods:{}
     
 }
-
 </script>
 
+<style>
+
+</style>
 
 
 
