@@ -2,9 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookCOntroller;
-
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/bookcatalog',[LendingBookController::class, 'index']);
-route::post('/insertBook',[BookController::class, 'addBook']);
-Route::post('/tryLogin', [UserController::class, 'authenticate']);
+Route::get('/search',[SearchController::class, 'searchIndex']);
+
+//Route::get('/search',[SearchController::class, 'index']);

@@ -7,20 +7,20 @@
             <Tr>
                 <th>検索範囲：</th>
                 <select v-model="value">
-                    <option value="book_id">図書ID</option>
-                    <option value="title">タイトル</option>
-                    <option value="author">著者</option>
-                    <option value="translator">訳者</option>
-                    <option value="publisher">出版社</option>
-                    <option value="publication_date">出版日</option>
-                    <option value="code">ISBN番号</option>
-                    <option value="memo">備考</option>
-                    <option value="keyword">キーワード</option>
+                    <option value="1">図書ID</option>
+                    <option value="2">タイトル</option>
+                    <option value="3">著者</option>
+                    <option value="4">訳者</option>
+                    <option value="5">出版社</option>
+                    <option value="6">出版日</option>
+                    <option value="7">ISBN番号</option>
+                    <option value="8">備考</option>
+                    <option value="9">キーワード</option>
                 </select>
             </Tr>
             <Tr>
                 <th>検索語：</th>
-                <input type="text" name="serchword" v-model="search_word">
+                <input type="text" name="serchword">
             </Tr>
             <tr>
                 <p>{{ value }}</p>
@@ -46,7 +46,6 @@ export default {
     data() {
         return {
             value: '',
-            search_word: '',
             book_catalogs: [],
         }
 

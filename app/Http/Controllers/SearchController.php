@@ -14,10 +14,8 @@ class SearchController extends Controller
         //dd("hello");
       // dd( DB::select('select * from book_catalog'));
 
-        $bookcatalogs = DB::select('select * from book_catalog');
+         $bookcatalogs = DB::select('select * from book_catalog');
         //dd($bookcatalogs);
-        
-
         return [
             'bookcatalogs' => $bookcatalogs,
         ];
