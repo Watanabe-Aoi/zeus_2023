@@ -32,29 +32,53 @@ export default {
         return {
 
             lending_books: [],
+            
+            // statusId:[
+            //         {
+            //             id: 1,
+            //             text: '保管中',
+            //         },
+            //         {
+            //             id: 2,
+            //             text: '貸出中',
+            //         },
+            //         {
+            //             id: 3,
+            //             text: '紛失',
+            //         },
+            //     ],
+
+            // statusId: this.$store.state.statusId,
 
         }
     },
 
     mounted() {
-        axios.get('/api/book_catalog').then(response => {
+        axios.get('/api/book_catalog', {
+            params: {
+                book_search: '貸出中' 
+            }
+        }).then(response => {
+            console.log(response.data.book_catalog);
             this.lending_books = response.data.book_catalog;
         })
     },
 
     methods: {
-        returnBook(lending_book){
+        returnBook(lending_book) {
             axios.post('/api/return', lending_book).then(response => {
                 this.lending_book = response.data.book_catalog;
             })
         },
-
         deleteBook(lending_book) {
-            axios.post('/api/book_catalog',lending_book).then(response => {
+            axios.post('/api/book_catalog', lending_book).then(response => {
                 this.lending_books = response.data.book_catalog;
             })
-        }
-    }
+        },
+    },
+
+
 }
+
 
 </script>

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class LendingBookController extends Controller
 {
     public function index(Request $request){
-        $book_catalog = \DB::select('select * from book_catalog');
+        $book_catalog = \DB::table('book_catalog')->where('status', 'LIKE', $request->book_search);
         return [
             'book_catalog' => $book_catalog
         ];

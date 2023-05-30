@@ -27,6 +27,5 @@ Route::get('/book_catalog', [LendingBookController::class, 'index']);
 Route::post('/book_catalog', [LendingBookController::class, 'deleteBook']);
 Route::post('/return', [LendingBookController::class, 'returnBook']);
 
-Route::get('/bookcatalog',[LendingBookController::class, 'index']);
 route::post('/insertBook',[BookController::class, 'addBook']);
 Route::post('/tryLogin', [UserController::class, 'authenticate']);

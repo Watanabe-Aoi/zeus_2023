@@ -6,6 +6,21 @@ Vue.use(Vuex);
 const store = {
     state: {
                 new_book:[],
+
+                statusId:[
+                    {
+                        id: 1,
+                        text: '保管中',
+                    },
+                    {
+                        id: 2,
+                        text: '貸出中',
+                    },
+                    {
+                        id: 3,
+                        text: '紛失',
+                    },
+                ],
             },
 
             mutations:{
