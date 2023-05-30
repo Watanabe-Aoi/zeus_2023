@@ -1,6 +1,9 @@
 <template>
     <table>
         <HeadContent />
+        <div>
+            <tr>{{ count }}件見つかりました。</tr>
+        </div>
         <FootText />
     </table>
 </template>
@@ -16,6 +19,11 @@ export default {
     components: {
         HeadContent,
         FootText,
+    },
+    data() {
+        return {
+            count: 0,
+        }
     },
 }
 
