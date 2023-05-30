@@ -13,6 +13,9 @@ import LoginPage from './components/LoginPage';
 import Logouted from './components/Logouted';
 import SearchResult from './components/SearchResult';
 import EditForm from './components/EditForm';
+import ConfirmTakeoutForm from './components/ConfirmTakeoutForm';
+import ConfirmDeleteForm from './components/ConfirmDeleteForm';
+
 const routes = [
 
    {
@@ -77,6 +80,16 @@ const routes = [
       path: "/editForm",
       component: EditForm,
       name: "editForm",
+   },
+   {
+      path: "/confirmTakeoutForm",
+      component: ConfirmTakeoutForm,
+      name: "confirmTakeoutForm",
+   },
+   {
+      path: "/confirmDeleteForm",
+      component: ConfirmDeleteForm,
+      name: "confirmDeleteForm",
    },
 ];
 

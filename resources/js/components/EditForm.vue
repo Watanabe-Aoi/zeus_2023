@@ -74,6 +74,9 @@ export default {
                 memo: '',
             },
         }
+    },
+    methods: {
+
     }
 }
 </script>

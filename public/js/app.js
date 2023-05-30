@@ -2054,6 +2054,26 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmDeleteForm.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmDeleteForm.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmTakeoutForm.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmTakeoutForm.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=script&lang=js& ***!
@@ -2094,7 +2114,8 @@ __webpack_require__.r(__webpack_exports__);
         memo: ''
       }
     };
-  }
+  },
+  methods: {}
 });
 
 /***/ }),
@@ -2320,6 +2341,17 @@ __webpack_require__.r(__webpack_exports__);
     return {
       count: 0
     };
+  },
+  methods: {
+    takeoutForm: function takeoutForm() {
+      this.$router.push('/confirmTakeoutForm');
+    },
+    editForm: function editForm() {
+      this.$router.push('/editForm');
+    },
+    deleteForm: function deleteForm() {
+      this.$router.push('/confirmDeleteForm');
+    }
   }
 });
 
@@ -2645,6 +2677,54 @@ __webpack_require__.r(__webpack_exports__);
     };
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmDeleteForm.vue?vue&type=template&id=145fc994&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmDeleteForm.vue?vue&type=template&id=145fc994& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render),
+/* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("tr", [_vm._v("aa")]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmTakeoutForm.vue?vue&type=template&id=69ddd416&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmTakeoutForm.vue?vue&type=template&id=69ddd416& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render),
+/* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("tr", [_vm._v("ii")]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
 
 /***/ }),
 
@@ -3256,7 +3336,22 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", [_c("tr", [_vm._v(_vm._s(_vm.count) + "件見つかりました。")]), _vm._v(" "), _c("tr", [_c("ListTakingoutResult")], 1)]), _vm._v(" "), _c("FootText")], 1);
+  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", [_c("tr", [_vm._v(_vm._s(_vm.count) + "件見つかりました。")]), _vm._v(" "), _c("table", [_c("tr", [_c("th", [_vm._v("著者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("図書ID：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("状態：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s())])]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    on: {
+      click: _vm.takeoutForm
+    }
+  }, [_vm._v("この本を返却する")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    on: {
+      click: _vm.editForm
+    }
+  }, [_vm._v("編集")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    on: {
+      click: _vm.deleteForm
+    }
+  }, [_vm._v("削除")])])]), _vm._v(" "), _c("FootText")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -3655,7 +3750,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("h1", [_vm._v("貸出中図書一覧")]), _vm._v(" "), _c("table", [_c("tr", [_c("th", [_vm._v("著者：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.author))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.translator))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.publisher))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.publication_date))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.keyword))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.isbn))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("図書ID：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.book_id))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.register_date))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("状態：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.condition))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _c("td", [_vm._v(_vm._s(_vm.lending_books.remarks))])]), _vm._v(" "), _c("button", {
+  }, [_c("h1", [_vm._v("貸出中図書一覧")]), _vm._v(" "), _c("table", [_c("tr", [_c("th", [_vm._v("著者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.author))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.translator))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.publisher))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.publication_date))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.keyword))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.isbn))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("図書ID：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.book_id))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("登録日：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.register_date))]), _vm._v(" "), _c("td"), _vm._v(" "), _c("td"), _vm._v(" "), _c("th", [_vm._v("状態：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.condition))])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考：")]), _vm._v(" "), _c("td", [_vm._v(_vm._s(_vm.lending_books.remarks))])]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary"
   }, [_vm._v("この本を返却する")]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary"
@@ -3796,7 +3891,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_ExampleComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/ExampleComponent */ "./resources/js/components/ExampleComponent.vue");
 /* harmony import */ var _components_addForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/addForm */ "./resources/js/components/addForm.vue");
 /* harmony import */ var _components_SearchForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SearchForm */ "./resources/js/components/SearchForm.vue");
@@ -3810,6 +3905,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Logouted__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Logouted */ "./resources/js/components/Logouted.vue");
 /* harmony import */ var _components_SearchResult__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/SearchResult */ "./resources/js/components/SearchResult.vue");
 /* harmony import */ var _components_EditForm__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/EditForm */ "./resources/js/components/EditForm.vue");
+/* harmony import */ var _components_ConfirmTakeoutForm__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/ConfirmTakeoutForm */ "./resources/js/components/ConfirmTakeoutForm.vue");
+/* harmony import */ var _components_ConfirmDeleteForm__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/ConfirmDeleteForm */ "./resources/js/components/ConfirmDeleteForm.vue");
+
+
 
 
 
@@ -3875,8 +3974,16 @@ var routes = [{
   path: "/editForm",
   component: _components_EditForm__WEBPACK_IMPORTED_MODULE_12__["default"],
   name: "editForm"
+}, {
+  path: "/confirmTakeoutForm",
+  component: _components_ConfirmTakeoutForm__WEBPACK_IMPORTED_MODULE_13__["default"],
+  name: "confirmTakeoutForm"
+}, {
+  path: "/confirmDeleteForm",
+  component: _components_ConfirmDeleteForm__WEBPACK_IMPORTED_MODULE_14__["default"],
+  name: "confirmDeleteForm"
 }];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_13__["default"]({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_15__["default"]({
   mode: 'history',
   routes: routes
 });
@@ -39569,6 +39676,90 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./resources/js/components/ConfirmDeleteForm.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/ConfirmDeleteForm.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ConfirmDeleteForm_vue_vue_type_template_id_145fc994___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfirmDeleteForm.vue?vue&type=template&id=145fc994& */ "./resources/js/components/ConfirmDeleteForm.vue?vue&type=template&id=145fc994&");
+/* harmony import */ var _ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ConfirmDeleteForm.vue?vue&type=script&lang=js& */ "./resources/js/components/ConfirmDeleteForm.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ConfirmDeleteForm_vue_vue_type_template_id_145fc994___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ConfirmDeleteForm_vue_vue_type_template_id_145fc994___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ConfirmDeleteForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ConfirmTakeoutForm.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/ConfirmTakeoutForm.vue ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ConfirmTakeoutForm_vue_vue_type_template_id_69ddd416___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfirmTakeoutForm.vue?vue&type=template&id=69ddd416& */ "./resources/js/components/ConfirmTakeoutForm.vue?vue&type=template&id=69ddd416&");
+/* harmony import */ var _ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ConfirmTakeoutForm.vue?vue&type=script&lang=js& */ "./resources/js/components/ConfirmTakeoutForm.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ConfirmTakeoutForm_vue_vue_type_template_id_69ddd416___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ConfirmTakeoutForm_vue_vue_type_template_id_69ddd416___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ConfirmTakeoutForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/EditForm.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/EditForm.vue ***!
@@ -40197,6 +40388,46 @@ component.options.__file = "resources/js/components/returnSuccess.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/ConfirmDeleteForm.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/ConfirmDeleteForm.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ConfirmDeleteForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmDeleteForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default())); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ConfirmTakeoutForm.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/ConfirmTakeoutForm.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ConfirmTakeoutForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmTakeoutForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default())); 
+
+/***/ }),
+
 /***/ "./resources/js/components/EditForm.vue?vue&type=script&lang=js&":
 /*!***********************************************************************!*\
   !*** ./resources/js/components/EditForm.vue?vue&type=script&lang=js& ***!
@@ -40434,6 +40665,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_returnSuccess_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./returnSuccess.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/returnSuccess.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_returnSuccess_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ConfirmDeleteForm.vue?vue&type=template&id=145fc994&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/ConfirmDeleteForm.vue?vue&type=template&id=145fc994& ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_template_id_145fc994___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   staticRenderFns: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_template_id_145fc994___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDeleteForm_vue_vue_type_template_id_145fc994___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ConfirmDeleteForm.vue?vue&type=template&id=145fc994& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmDeleteForm.vue?vue&type=template&id=145fc994&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ConfirmTakeoutForm.vue?vue&type=template&id=69ddd416&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/ConfirmTakeoutForm.vue?vue&type=template&id=69ddd416& ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_template_id_69ddd416___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   staticRenderFns: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_template_id_69ddd416___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmTakeoutForm_vue_vue_type_template_id_69ddd416___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ConfirmTakeoutForm.vue?vue&type=template&id=69ddd416& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ConfirmTakeoutForm.vue?vue&type=template&id=69ddd416&");
+
 
 /***/ }),
 
