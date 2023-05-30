@@ -15,7 +15,9 @@ import SearchResult from './components/SearchResult';
 import EditForm from './components/EditForm';
 import ConfirmTakeoutForm from './components/ConfirmTakeoutForm';
 import ConfirmDeleteForm from './components/ConfirmDeleteForm';
-
+import EditSuccess from './components/EditSuccess';
+import DeleteSuccess from './components/DeleteSuccess';
+import TakeoutSuccess from './components/TakeoutSuccess';
 const routes = [
 
    {
@@ -91,6 +93,22 @@ const routes = [
       component: ConfirmDeleteForm,
       name: "confirmDeleteForm",
    },
+   {
+      path: "/editSuccess",
+      component: EditSuccess,
+      name: "editSuccess",
+   },
+   {
+      path: "/deleteSuccess",
+      component: DeleteSuccess,
+      name: "deleteSuccess",
+   },
+   {
+      path: "/takeoutSuccess",
+      component: TakeoutSuccess,
+      name: "takeoutSuccess",
+   },
+
 ];
 
 const router = new VueRouter({
