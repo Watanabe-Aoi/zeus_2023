@@ -22,9 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/book_catalog', [LendingBookController::class, 'index']);
-Route::post('/book_catalog', [LendingBookController::class, 'deleteBook']);
-Route::post('/return', [LendingBookController::class, 'returnBook']);
+Route::post('/book_catalog', [LendingBookController::class, 'index']);
+// Route::post('/book_catalog', [LendingBookController::class, 'deleteBook']);
+// Route::post('/return', [LendingBookController::class, 'returnBook']);
 
 route::post('/insertBook',[BookController::class, 'addBook']);
 Route::post('/tryLogin', [UserController::class, 'authenticate']);

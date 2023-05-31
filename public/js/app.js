@@ -2515,31 +2515,13 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       lending_books: []
-
-      // statusId:[
-      //         {
-      //             id: 1,
-      //             text: '保管中',
-      //         },
-      //         {
-      //             id: 2,
-      //             text: '貸出中',
-      //         },
-      //         {
-      //             id: 3,
-      //             text: '紛失',
-      //         },
-      //     ],
-
-      // statusId: this.$store.state.statusId,
     };
   },
   mounted: function mounted() {
     var _this = this;
-    axios__WEBPACK_IMPORTED_MODULE_3___default().get('/api/book_catalog', {
-      params: {
-        book_search: '貸出中'
-      }
+    axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog', {
+      column_name: 'status',
+      book_search: '貸出中'
     }).then(function (response) {
       console.log(response.data.book_catalog);
       _this.lending_books = response.data.book_catalog;
