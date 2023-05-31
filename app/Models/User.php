@@ -13,9 +13,5 @@ class User extends Model
     protected $guarded = [];
 
     public static function rules() {
-        return [
-            'user_id' => 'required | unique',
-            'password' => 'required',
-        ];
     }
 }
