@@ -17,5 +17,11 @@ class UserTableSeeder extends Seeder
             'user_id' => 'test_user',
             'password' => 'pass',
         ]);
+
+        
+        \DB::table('users')->insert([
+            'user_id' => 'admin',
+            'password' => 'adminpass',
+        ]);
     }
 }

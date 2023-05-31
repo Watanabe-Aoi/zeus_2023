@@ -76,7 +76,9 @@ export default {
                 publisher: '',
                 date: '',
                 keyword: '',
-                remarks: '',
+                memo: '',
+                data_creator: '',
+                
             }
 
         }
