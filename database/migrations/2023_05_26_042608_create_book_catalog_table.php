@@ -20,7 +20,7 @@ class CreateBookCatalogTable extends Migration
             $table->string('translator');   // 訳者
             $table->string('publisher');
             $table->date('publication_date');
-            $table->string('code');
+            $table->string('code')->uniqueKey();
             $table->string('status');
             $table->string('keyword');
             $table->string('memo');

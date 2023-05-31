@@ -2517,7 +2517,7 @@ __webpack_require__.r(__webpack_exports__);
       var null_book = {
         name: ''
       };
-      this.$router.push(link)["catch"](function (err) {});
+      this.$router.push('/addForm')["catch"](function (err) {});
       // 引数 link ← router.jsに登録したnameを代入
     }
   }
@@ -2553,9 +2553,9 @@ __webpack_require__.r(__webpack_exports__);
         isbn: '',
         title: '',
         author: '',
-        translater: '',
+        translator: '',
         publisher: '',
-        date: '',
+        publication_date: '',
         keyword: '',
         memo: '',
         data_creator: ''
@@ -2591,6 +2591,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['id', 'book'],
   components: {
     HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -2599,11 +2600,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       new_book: {
+        book_id: this.$route.params.book.book_id,
         title: this.$route.params.book.title,
         author: this.$route.params.book.author,
-        translator: this.$route.params.book.translater,
+        translator: this.$route.params.book.translator,
         publisher: this.$route.params.book.publisher,
-        publication_date: this.$route.params.book.publicationdate,
+        publication_date: this.$route.params.book.publication_date,
         code: this.$route.params.book.code,
         status: '〇保管中',
         keyword: this.$route.params.book.keyword,
@@ -2653,25 +2655,29 @@ var d = now.getDate();
       new_book: {
         title: this.$route.params.book.title,
         author: this.$route.params.book.author,
-        translator: this.$route.params.book.translater,
+        translator: this.$route.params.book.translator,
         publisher: this.$route.params.book.publisher,
-        publication_date: this.$route.params.book.publicationdate,
+        publication_date: this.$route.params.book.publication_date,
         code: this.$route.params.book.code,
         status: '〇保管中',
         keyword: this.$route.params.book.keyword,
         memo: this.$route.params.book.memo,
         data_creator: 'あ',
         deta_create_date: y + "-" + m + "-" + d
-      }
+      },
+      id: ''
     };
   },
   methods: {
-    insertBook: function insertBook() {
+    insertBook: function insertBook(book) {
       var _this = this;
-      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog/insertBook', this.new_book).then(function (response) {
-        _this.new_book = response.data.new_book;
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog/insertBook', book).then(function (response) {
+        book = response.data.book;
         _this.$router.push({
-          path: '/addSuccess'
+          name: 'addSuccess',
+          params: {
+            book: book
+          }
         });
       })["catch"]();
     }
@@ -3711,7 +3717,9 @@ var render = function render() {
   }, [_c("HeadContent"), _vm._v(" "), _c("h2", [_vm._v("図書管理システムメニュー")]), _vm._v(" "), _c("ul", [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("li", [_c("button", {
     staticClass: "btn btn-link",
     on: {
-      click: _vm.tolink
+      click: function click($event) {
+        return _vm.toAddform();
+      }
     }
   }, [_vm._v("新規図書登録")])])]), _vm._v(" "), _c("FootText")], 1);
 };
@@ -3754,7 +3762,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", [_c("table", [_vm._m(0), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN:")]), _vm._v(" "), _c("td", [_c("input", {
+  return _c("table", [_c("HeadContent"), _vm._v(" "), _c("div", [_c("table", [_vm._m(0), _vm._v(" "), _c("tr", [_c("th", [_vm._v("ISBN:")]), _c("td", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3773,7 +3781,7 @@ var render = function render() {
         _vm.$set(_vm.new_book, "code", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c("td", [_vm._v("例：ISBN1-2345-6789-X")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("タイトル:")]), _vm._v(" "), _c("td", [_c("input", {
+  })]), _c("td", [_vm._v("例：ISBN1-2345-6789-X")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("タイトル:")]), _c("td", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3792,7 +3800,7 @@ var render = function render() {
         _vm.$set(_vm.new_book, "title", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("著者:")]), _vm._v(" "), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("著者:")]), _c("td", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3811,26 +3819,26 @@ var render = function render() {
         _vm.$set(_vm.new_book, "author", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者:")]), _vm._v(" "), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("訳者:")]), _c("td", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.new_book.translater,
-      expression: "new_book.translater"
+      value: _vm.new_book.translator,
+      expression: "new_book.translator"
     }],
     attrs: {
       type: "text"
     },
     domProps: {
-      value: _vm.new_book.translater
+      value: _vm.new_book.translator
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
-        _vm.$set(_vm.new_book, "translater", $event.target.value);
+        _vm.$set(_vm.new_book, "translator", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社:")]), _vm._v(" "), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社:")]), _c("td", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3849,26 +3857,26 @@ var render = function render() {
         _vm.$set(_vm.new_book, "publisher", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日:")]), _vm._v(" "), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版日:")]), _c("td", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.new_book.publicationdate,
-      expression: "new_book.publicationdate"
+      value: _vm.new_book.publication_date,
+      expression: "new_book.publication_date"
     }],
     attrs: {
       type: "text"
     },
     domProps: {
-      value: _vm.new_book.publicationdate
+      value: _vm.new_book.publication_date
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
-        _vm.$set(_vm.new_book, "publicationdate", $event.target.value);
+        _vm.$set(_vm.new_book, "publication_date", $event.target.value);
       }
     }
-  })]), _vm._v(" "), _c("td", [_vm._v("例：2003-04-05")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード:")]), _vm._v(" "), _c("td", [_c("input", {
+  })]), _c("td", [_vm._v("例：2003-04-05")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード:")]), _c("td", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3887,7 +3895,7 @@ var render = function render() {
         _vm.$set(_vm.new_book, "keyword", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考:")]), _vm._v(" "), _c("td", [_c("input", {
+  })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("備考:")]), _c("td", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -3906,7 +3914,13 @@ var render = function render() {
         _vm.$set(_vm.new_book, "memo", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _c("FootText")], 1)], 1);
+  })])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("td", [_c("button", {
+    on: {
+      click: function click($event) {
+        return _vm.addNewBook(_vm.new_book);
+      }
+    }
+  })])]), _vm._v(" "), _c("FootText")], 1)], 1);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -3916,10 +3930,6 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("tr", [_c("td", [_vm._v("・印の項目は必ず入力してください。")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("tr", [_c("td", [_c("button", [_vm._v("登録")])])]);
 }];
 render._withStripped = true;
 
@@ -3987,7 +3997,7 @@ var render = function render() {
   }), _vm._v(" "), _c("tr", [_c("td", [_c("button", {
     on: {
       click: function click($event) {
-        return _vm.insertBook();
+        return _vm.insertBook(_vm.new_book);
       }
     }
   }, [_vm._v("登録")])])]), _vm._v(" "), _c("router-link", {

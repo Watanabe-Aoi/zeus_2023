@@ -3,49 +3,17 @@
         <HeadContent />
         <div>
             <table>
-                <tr>
-                    <th>新規図書登録</th>
-                </tr>
-                <tr>
-                    <th>ISBN:</th>
-                    <td><input type="text" v-model="new_book.code"></td>
-                    <td>例：ISBN1-2345-6789-X</td>
-                </tr>
-                <tr>
-                    <th>タイトル:</th>
-                    <td><input type="text" v-model="new_book.title"></td>
-                </tr>
-                <tr>
-                    <th>著者:</th>
-                    <td><input type="text" v-model="new_book.author"></td>
-                </tr>
-                <tr>
-                    <th>訳者:</th>
-                    <td><input type="text" v-model="new_book.translater"></td>
-                </tr>
-                <tr>
-                    <th>出版社:</th>
-                    <td><input type="text" v-model="new_book.publisher"></td>
-                </tr>
-                <tr>
-                    <th>出版日:</th>
-                    <td><input type="text" v-model="new_book.publicationdate"></td>
-                    <td>例：2003-04-05</td>
-                </tr>
-                <tr>
-                    <th>キーワード:</th>
-                    <td><input type="text" v-model="new_book.keyword"></td>
-                </tr>
-                <tr>
-                    <th>備考:</th>
-                    <td><input type="text" v-model="new_book.memo"></td>
-                </tr>
-                <tr>
-                    <td>・印の項目は必ず入力してください。</td>
-                </tr>
-                <tr>
-                    <td><button>登録</button></td>
-                </tr>
+                <tr><th>新規図書登録</th></tr>
+                <tr><th>ISBN:</th><td><input type="text" v-model="new_book.code"></td><td>例：ISBN1-2345-6789-X</td></tr>
+                <tr><th>タイトル:</th><td><input type="text" v-model="new_book.title"></td></tr>
+                <tr><th>著者:</th><td><input type="text" v-model="new_book.author"></td></tr>
+                <tr><th>訳者:</th><td><input type="text" v-model="new_book.translator"></td></tr>
+                <tr><th>出版社:</th><td><input type="text" v-model="new_book.publisher"></td></tr>
+                <tr><th>出版日:</th><td><input type="text" v-model="new_book.publication_date"></td><td>例：2003-04-05</td></tr>
+                <tr><th>キーワード:</th><td><input type="text" v-model="new_book.keyword"></td></tr>
+                <tr><th>備考:</th><td><input type="text" v-model="new_book.memo"></td></tr>
+                <tr><td>・印の項目は必ず入力してください。</td></tr>
+                <td><button @click="addNewBook(new_book)"></button></td>
             </table>
             <FootText />
         </div>
@@ -71,9 +39,9 @@ export default {
                 isbn: '',
                 title: '',
                 author: '',
-                translater: '',
+                translator: '',
                 publisher: '',
-                date: '',
+                publication_date: '',
                 keyword: '',
                 memo: '',
                 data_creator: '',

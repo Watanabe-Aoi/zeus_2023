@@ -6,7 +6,7 @@
          <li><button class="btn btn-link">検索</button></li>
          <li><button class="btn btn-link">全図書一覧</button></li>
          <li><button class="btn btn-link">貸出図書一覧</button></li>
-         <li><button @click="tolink" class="btn btn-link">新規図書登録</button></li>
+         <li><button @click="toAddform()" class="btn btn-link">新規図書登録</button></li>
       </ul>
 
       <FootText />
@@ -29,7 +29,7 @@ export default{
             name: '',
             
          }
-         this.$router.push(link).catch(err => {});
+         this.$router.push('/addForm').catch(err => {});
          // 引数 link ← router.jsに登録したnameを代入
       },
    }
