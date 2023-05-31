@@ -25,7 +25,7 @@ class CreateBookCatalogTable extends Migration
             $table->string('keyword');
             $table->string('memo');
             $table->string('data_creator');
-            $table->dateTime('deta_create_date')->nullable(false);
+            $table->timestamp('deta_create_date')->nullable(false);
             $table->timestamps();    // created_at updated_atフィールドを自動設定
         });
     }
