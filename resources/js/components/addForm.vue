@@ -44,6 +44,7 @@ export default{
                 publicationdate: '',
                 keyword: '',
                 memo: '',
+                data_creator: '',
                 
             }
 
