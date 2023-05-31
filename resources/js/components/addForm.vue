@@ -43,7 +43,9 @@
                 <tr>
                     <td>・印の項目は必ず入力してください。</td>
                 </tr>
-                <td><button @click="addNewBook(new_book)"></button></td>
+                <tr>
+                    <td><button>登録</button></td>
+                </tr>
             </table>
             <FootText />
         </div>
@@ -63,34 +65,35 @@ export default {
         // ConfirmAddFrom
 
     },
-    data() {
-        return {
-            new_book: {
-                code: '',
-                title: '',
-                author: '',
-                translater: '',
-                publisher: '',
-                publicationdate: '',
-                keyword: '',
-                memo: '',
 
-            }
-
+},
+data() {
+    return {
+        new_book: {
+            isbn: '',
+            title: '',
+            author: '',
+            translater: '',
+            publisher: '',
+            date: '',
+            keyword: '',
+            remarks: '',
         }
 
-    },
-
-    methods: {
-        addNewBook(book) {
-            // this.$store.commit('confirmInsertBook', new_book);
-            this.$router.push({ name: 'confirmAddForm', params: { book } });
-
-        },
     }
+
+},
+methods: {
+    // insertBooks(){
+    //     axios.post('/api/books/insertBooks',this.new_book).then(response =>{
+    //         this.books = response.data.books;
+    //     });
+    // },
+}
 }
 </script>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -102,3 +105,6 @@ export default {
 
 <style></style>
 >>>>>>> d173521c654288ed42ea38ea7f3ab6dac956f163
+=======
+<style></style>
+>>>>>>> 3b11ac03a9ac39c47985714bfeaddbd59fff6500

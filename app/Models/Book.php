@@ -5,17 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Book extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'user_id';
+
+    protected $primaryKey = 'book_id';
     protected $keyType = 'string';
+
     protected $guarded = [];
 
-    public static function rules() {
+    public function rules() {
         return [
-            'user_id' => 'required | unique',
-            'password' => 'required',
+            
         ];
     }
 }

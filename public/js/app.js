@@ -2502,50 +2502,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/addForm.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _FootText_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FootText.vue */ "./resources/js/components/FootText.vue");
-/* harmony import */ var _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadContent.vue */ "./resources/js/components/HeadContent.vue");
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-    // addForm,
-    // ConfirmAddFrom
-  },
-  data: function data() {
-    return {
-      new_book: {
-        code: '',
-        title: '',
-        author: '',
-        translater: '',
-        publisher: '',
-        publicationdate: '',
-        keyword: '',
-        memo: ''
-      }
-    };
-  },
-  methods: {
-    addNewBook: function addNewBook(book) {
-      // this.$store.commit('confirmInsertBook', new_book);
-      this.$router.push({
-        name: 'confirmAddForm',
-        params: {
-          book: book
-        }
-      });
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/minami/zeus_2023/resources/js/components/addForm.vue: Unexpected token (12:0)\n\n\u001b[0m \u001b[90m 10 |\u001b[39m         \u001b[90m// addForm,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 |\u001b[39m         \u001b[90m// ConfirmAddFrom\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 |\u001b[39m     \u001b[0m\n\u001b[0m \u001b[90m 15 |\u001b[39m     }\u001b[33m,\u001b[39m\u001b[0m\n    at instantiate (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:653:32)\n    at constructor (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:946:12)\n    at Parser.raise (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:3270:19)\n    at Parser.unexpected (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:3300:16)\n    at Parser.parsePropertyName (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11847:18)\n    at Parser.parsePropertyDefinition (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11710:22)\n    at Parser.parseObjectLike (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11649:21)\n    at Parser.parseExprAtom (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11159:23)\n    at Parser.parseExprSubscripts (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10872:23)\n    at Parser.parseUpdate (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10855:21)\n    at Parser.parseMaybeUnary (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10831:23)\n    at Parser.parseMaybeUnaryOrPrivate (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10669:61)\n    at Parser.parseExprOps (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10674:23)\n    at Parser.parseMaybeConditional (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10651:23)\n    at Parser.parseMaybeAssign (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10612:21)\n    at /home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10582:39\n    at Parser.allowInAnd (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:12257:12)\n    at Parser.parseMaybeAssignAllowIn (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10582:17)\n    at Parser.parseObjectProperty (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11773:83)\n    at Parser.parseObjPropValue (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11800:100)\n    at Parser.parsePropertyDefinition (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11734:17)\n    at Parser.parseObjectLike (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11649:21)\n    at Parser.parseExprAtom (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:11159:23)\n    at Parser.parseExprSubscripts (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10872:23)\n    at Parser.parseUpdate (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10855:21)\n    at Parser.parseMaybeUnary (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10831:23)\n    at Parser.parseMaybeUnaryOrPrivate (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10669:61)\n    at Parser.parseExprOps (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10674:23)\n    at Parser.parseMaybeConditional (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10651:23)\n    at Parser.parseMaybeAssign (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10612:21)\n    at /home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10582:39\n    at Parser.allowInAnd (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:12252:16)\n    at Parser.parseMaybeAssignAllowIn (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:10582:17)\n    at Parser.parseExportDefaultExpression (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:13758:22)\n    at Parser.parseExport (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:13663:25)\n    at Parser.parseStatementContent (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:12661:27)\n    at Parser.parseStatementLike (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:12549:17)\n    at Parser.parseModuleItem (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:12526:17)\n    at Parser.parseBlockOrModuleBlockBody (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:13121:36)\n    at Parser.parseBlockBody (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:13114:10)\n    at Parser.parseProgram (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:12437:10)\n    at Parser.parseTopLevel (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:12427:25)\n    at Parser.parse (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:14245:10)\n    at parse (/home/minami/zeus_2023/node_modules/@babel/parser/lib/index.js:14286:38)\n    at parser (/home/minami/zeus_2023/node_modules/@babel/core/lib/parser/index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/home/minami/zeus_2023/node_modules/@babel/core/lib/transformation/normalize-file.js:64:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/home/minami/zeus_2023/node_modules/@babel/core/lib/transformation/index.js:21:50)\n    at run.next (<anonymous>)");
 
 /***/ }),
 
@@ -3757,13 +3716,7 @@ var render = function render() {
         _vm.$set(_vm.new_book, "memo", $event.target.value);
       }
     }
-  })])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("td", [_c("button", {
-    on: {
-      click: function click($event) {
-        return _vm.addNewBook(_vm.new_book);
-      }
-    }
-  })])]), _vm._v(" "), _c("FootText")], 1)], 1);
+  })])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]), _vm._v(" "), _c("FootText")], 1)], 1);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -3773,6 +3726,10 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("tr", [_c("td", [_vm._v("・印の項目は必ず入力してください。")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("tr", [_c("td", [_c("button", [_vm._v("登録")])])]);
 }];
 render._withStripped = true;
 
