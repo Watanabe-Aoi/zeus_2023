@@ -27,6 +27,7 @@ export default {
         HeadContent,
         FootText,
     },
+    props:['books'],
 
     data() {
         return {
@@ -49,11 +50,11 @@ export default {
     },
 
     methods: {
-        returnBook(book_id) {
-            this.$router.push({path: '/confirmReturnForm', params: {books: book_id}});
-        },
+        // returnBook(lending_book) {
+        //     this.$router.push({path: '/confirmReturnForm', params: {books: lending_book}});
+        // },
         deleteBook(lending_book) {
-            axios.post('/api/book_catalog', lending_book).then(response => {
+            axios.post('/api/book_catalog/delete', lending_book).then(response => {
                 this.lending_books = response.data.book_catalog;
             })
         },

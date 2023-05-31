@@ -16,7 +16,6 @@ class LendingBookController extends Controller
             'book_catalog' => $book_catalog
         ];
     }
-
     public function deleteBook(Request $request){
         \DB::table('book_catalog')->where('book_id',$request->book_id)->delete();
         $book_catalog = \DB::select('select * from book_catalog');
@@ -25,7 +24,6 @@ class LendingBookController extends Controller
         ];
            
     }
-
     public function returnBook(Request $request){
         $column_name = $request->column_name;
         $book_search = $request->book_search;
@@ -34,8 +32,6 @@ class LendingBookController extends Controller
         return [
             'book_catalog' => $book_catalog
         ];
-        
-
     }
 
 }
