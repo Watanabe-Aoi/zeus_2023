@@ -2,7 +2,7 @@
     <div class="container">
         <HeadContent />
         <h1>返却手続きが完了しました</h1>
-        <lendingList :bookcatalog="bookcatalog" />
+        <lendingList :lending_book="bookcatalog" />
         <table>
             <button class="btn btn-primary">この本を借りる</button>
             <button class="btn btn-primary">編集</button>

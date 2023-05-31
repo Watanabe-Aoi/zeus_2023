@@ -15,8 +15,13 @@ class UserTableSeeder extends Seeder
     {
         \DB::table('users')->insert([
             'user_id' => 'test_user',
-            'user_name' => 'test',
             'password' => 'pass',
+        ]);
+
+        
+        \DB::table('users')->insert([
+            'user_id' => 'admin',
+            'password' => 'adminpass',
         ]);
     }
 }

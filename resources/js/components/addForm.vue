@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <table>
         <HeadContent />
         <div>
             <table>
@@ -15,28 +15,28 @@
                 <tr><td>・印の項目は必ず入力してください。</td></tr>
                 <td><button @click="addNewBook(new_book)"></button></td>
             </table>
+            <FootText />
         </div>
-        <FootText />
-    </div>
+    </table>
 </template>
 
 <script>
 import FootText from './FootText.vue'
 import HeadContent from './HeadContent.vue';
 
-export default{
-    
+export default {
+
     components: {
         HeadContent,
         FootText,
         // addForm,
         // ConfirmAddFrom
-    
     },
-    data(){
-        return{
-            new_book:{
-                code: '',
+
+    data() {
+        return {
+            new_book: {
+                isbn: '',
                 title: '',
                 author: '',
                 translator: '',
@@ -48,21 +48,15 @@ export default{
                 
             }
 
-        }
-
+        };
     },
-    
-    methods:{
-        addNewBook(book){
-            // this.$store.commit('confirmInsertBook', new_book);
-            this.$router.push({ name: 'confirmAddForm', params:{book}});
-         
-        },
+
+    methods: {
+        // insertBooks(){
+        //     axios.post('/api/books/insertBooks',this.new_book).then(response =>{
+        //         this.books = response.data.books;
+        //     });
+        // },
     }
-}
-
+};
 </script>
-
-<style>
-
-</style>

@@ -11,9 +11,17 @@ import confirmAddForm from './components/confirmAddForm';
 import addSuccess from './components/addSuccess';
 import LoginPage from './components/LoginPage';
 import Logouted from './components/Logouted';
+import SearchResult from './components/SearchResult';
+import EditForm from './components/EditForm';
+import ConfirmTakeoutForm from './components/ConfirmTakeoutForm';
+import ConfirmDeleteForm from './components/ConfirmDeleteForm';
+import EditSuccess from './components/EditSuccess';
+import DeleteSuccess from './components/DeleteSuccess';
+import TakeoutSuccess from './components/TakeoutSuccess';
+import ConfirmEditForm from './components/ConfirmEditForm';
 
 const routes = [
-   
+
    {
       path: "/addForm",
       component: addForm,
@@ -67,7 +75,47 @@ const routes = [
       component: returnSuccess,
       name: "returnSuccess",
    },
-   
+   {
+      path: "/searchResult",
+      component: SearchResult,
+      name: "searchResult",
+   },
+   {
+      path: "/editForm",
+      component: EditForm,
+      name: "editForm",
+   },
+   {
+      path: "/confirmTakeoutForm",
+      component: ConfirmTakeoutForm,
+      name: "confirmTakeoutForm",
+   },
+   {
+      path: "/confirmDeleteForm",
+      component: ConfirmDeleteForm,
+      name: "confirmDeleteForm",
+   },
+   {
+      path: "/confirmEditForm",
+      component: ConfirmEditForm,
+      name: "confirmEditForm",
+   },
+   {
+      path: "/editSuccess",
+      component: EditSuccess,
+      name: "editSuccess",
+   },
+   {
+      path: "/deleteSuccess",
+      component: DeleteSuccess,
+      name: "deleteSuccess",
+   },
+   {
+      path: "/takeoutSuccess",
+      component: TakeoutSuccess,
+      name: "takeoutSuccess",
+   },
+
 ];
 
 const router = new VueRouter({

@@ -6,6 +6,7 @@ Vue.use(Vuex);
 const store = {
     state: {
                 new_book:[],
+
             },
 
             mutations:{
