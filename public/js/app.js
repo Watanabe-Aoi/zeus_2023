@@ -2303,9 +2303,9 @@ __webpack_require__.r(__webpack_exports__);
         code: '',
         title: '',
         author: '',
-        translater: '',
+        translator: '',
         publisher: '',
-        publicationdate: '',
+        publication_date: '',
         keyword: '',
         memo: '',
         data_creator: ''
@@ -2345,6 +2345,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['id', 'book'],
   components: {
     HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -2353,11 +2354,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       new_book: {
+        book_id: this.$route.params.book.book_id,
         title: this.$route.params.book.title,
         author: this.$route.params.book.author,
-        translator: this.$route.params.book.translater,
+        translator: this.$route.params.book.translator,
         publisher: this.$route.params.book.publisher,
-        publication_date: this.$route.params.book.publicationdate,
+        publication_date: this.$route.params.book.publication_date,
         code: this.$route.params.book.code,
         status: '〇保管中',
         keyword: this.$route.params.book.keyword,
@@ -2407,25 +2409,29 @@ var d = now.getDate();
       new_book: {
         title: this.$route.params.book.title,
         author: this.$route.params.book.author,
-        translator: this.$route.params.book.translater,
+        translator: this.$route.params.book.translator,
         publisher: this.$route.params.book.publisher,
-        publication_date: this.$route.params.book.publicationdate,
+        publication_date: this.$route.params.book.publication_date,
         code: this.$route.params.book.code,
         status: '〇保管中',
         keyword: this.$route.params.book.keyword,
         memo: this.$route.params.book.memo,
         data_creator: 'あ',
         deta_create_date: y + "-" + m + "-" + d
-      }
+      },
+      id: ''
     };
   },
   methods: {
-    insertBook: function insertBook() {
+    insertBook: function insertBook(book) {
       var _this = this;
-      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog/insertBook', this.new_book).then(function (response) {
-        _this.new_book = response.data.new_book;
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog/insertBook', book).then(function (response) {
+        book = response.data.book;
         _this.$router.push({
-          path: '/addSuccess'
+          name: 'addSuccess',
+          params: {
+            book: book
+          }
         });
       })["catch"]();
     }
@@ -3061,19 +3067,19 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.new_book.translater,
-      expression: "new_book.translater"
+      value: _vm.new_book.translator,
+      expression: "new_book.translator"
     }],
     attrs: {
       type: "text"
     },
     domProps: {
-      value: _vm.new_book.translater
+      value: _vm.new_book.translator
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
-        _vm.$set(_vm.new_book, "translater", $event.target.value);
+        _vm.$set(_vm.new_book, "translator", $event.target.value);
       }
     }
   })])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("出版社:")]), _c("td", [_c("input", {
@@ -3099,19 +3105,19 @@ var render = function render() {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: _vm.new_book.publicationdate,
-      expression: "new_book.publicationdate"
+      value: _vm.new_book.publication_date,
+      expression: "new_book.publication_date"
     }],
     attrs: {
       type: "text"
     },
     domProps: {
-      value: _vm.new_book.publicationdate
+      value: _vm.new_book.publication_date
     },
     on: {
       input: function input($event) {
         if ($event.target.composing) return;
-        _vm.$set(_vm.new_book, "publicationdate", $event.target.value);
+        _vm.$set(_vm.new_book, "publication_date", $event.target.value);
       }
     }
   })]), _c("td", [_vm._v("例：2003-04-05")])]), _vm._v(" "), _c("tr", [_c("th", [_vm._v("キーワード:")]), _c("td", [_c("input", {
@@ -3235,7 +3241,7 @@ var render = function render() {
   }), _vm._v(" "), _c("tr", [_c("td", [_c("button", {
     on: {
       click: function click($event) {
-        return _vm.insertBook();
+        return _vm.insertBook(_vm.new_book);
       }
     }
   }, [_vm._v("登録")])])]), _vm._v(" "), _c("router-link", {

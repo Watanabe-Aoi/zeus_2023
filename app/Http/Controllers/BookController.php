@@ -20,7 +20,8 @@ class BookController extends Controller
         unset($forms['_token']);
         $new_book->fill($forms)->save();
         
-        $book = Book::all();
+        // $book = Book::all();
+        $book = Book::where('code', $request->code)->first();
         return [
             'book' => $book,
         ];
