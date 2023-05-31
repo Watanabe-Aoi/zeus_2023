@@ -34,6 +34,7 @@ class LendingBookController extends Controller
         return [
             'book_catalog' => $book_catalog
         ];
+        
 
     }
 
