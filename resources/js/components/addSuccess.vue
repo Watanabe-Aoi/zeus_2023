@@ -23,6 +23,7 @@ import HeadContent from './HeadContent.vue';
 import AddBook from './AddBook.vue';
 
 export default{
+    props:['id','book'],
     
     components: {
         HeadContent,
@@ -35,18 +36,19 @@ export default{
             new_book: 
                 {
                     
-                  
+                    book_id: this.$route.params.book.book_id,
                     title: this.$route.params.book.title,
                     author: this.$route.params.book.author,
-                    translator: this.$route.params.book.translater,
+                    translator: this.$route.params.book.translator,
                     publisher: this.$route.params.book.publisher,
-                    publication_date: this.$route.params.book.publicationdate,
+                    publication_date: this.$route.params.book.publication_date,
                     code: this.$route.params.book.code,
                     status: '〇保管中',
                     keyword: this.$route.params.book.keyword,
                     memo: this.$route.params.book.memo,
                     data_creator: this.$route.params.book.data_creator,
                     deta_create_date: this.$route.params.book.deta_create_date,
+
                 },
         }
     },

@@ -7,13 +7,13 @@
       <div class="menu">
          <button @click="toLink('/')" class="btn btn-link">メニュー</button>
          <span>|</span>
-         <button @click="toLink('')" class="btn btn-link">検索</button>
+         <button @click="toLink('searchForm')" class="btn btn-link">検索</button>
          <span>|</span>
-         <button @click="toLink('')" class="btn btn-link">全図書一覧</button>
+         <button @click="toLink('searchResult')" class="btn btn-link">全図書一覧</button>
          <span>|</span>
-         <button @click="toLink('')" class="btn btn-link">貸出図書一覧</button>
+         <button @click="toLink('listtakingoutresult')" class="btn btn-link">貸出図書一覧</button>
          <span>|</span>
-         <button @click="toLink('')" class="btn btn-link">新規図書登録</button>
+         <button @click="toAddform()" class="btn btn-link">新規図書登録</button>
          <span>||</span>
          <button @click="loginingChange" class="btn btn-link">{{ login_logout_message }}</button>
       </div>
@@ -39,10 +39,13 @@ export default {
       },
 
       toLink(link) {
-         
          this.$router.push(link).catch(err => {});
          // 引数 link ← router.jsに登録したnameを代入
       },
+
+      toAddform() {
+         this.$router.push('/addForm').catch(err=>{});
+      }
    }
 }
 </script>
