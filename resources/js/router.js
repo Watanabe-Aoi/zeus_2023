@@ -18,6 +18,8 @@ import ConfirmDeleteForm from './components/ConfirmDeleteForm';
 import EditSuccess from './components/EditSuccess';
 import DeleteSuccess from './components/DeleteSuccess';
 import TakeoutSuccess from './components/TakeoutSuccess';
+import ConfirmEditForm from './components/ConfirmEditForm';
+
 const routes = [
 
    {
@@ -92,6 +94,11 @@ const routes = [
       path: "/confirmDeleteForm",
       component: ConfirmDeleteForm,
       name: "confirmDeleteForm",
+   },
+   {
+      path: "/confirmEditForm",
+      component: ConfirmEditForm,
+      name: "confirmEditForm",
    },
    {
       path: "/editSuccess",

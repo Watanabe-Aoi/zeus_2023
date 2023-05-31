@@ -12,13 +12,13 @@
                 <th>タイトル*：</th><input type="text" v-model="edited_books.title" value="lending_books.author">
             </tr>
             <tr>
-                <th>著者：</th><input type="text" v-model="edited_books.author" value="lending_books.author">
+                <th>著者*：</th><input type="text" v-model="edited_books.author" value="lending_books.author">
             </tr>
             <tr>
                 <th>訳者：</th><input type="text" v-model="edited_books.translator" value="lending_books.author">
             </tr>
             <tr>
-                <th>出版社：</th><input type="text" v-model="edited_books.publisher" value="lending_books.author">
+                <th>出版社*：</th><input type="text" v-model="edited_books.publisher" value="lending_books.author">
             </tr>
             <tr>
                 <th>出版日：</th><input type="text" v-model="edited_books.publicationdate" value="lending_books.author">
@@ -40,6 +40,10 @@
             <tr>
                 <th>備考：</th><input type="text" v-model="edited_books.memo" value="lending_books.author">
             </tr>
+            <tr>
+                *印の項目は必ず入力してください。
+            </tr>
+            <button v-on:click="transitionForm">変更</button>
         </div>
         <FootText />
     </table>
@@ -76,7 +80,9 @@ export default {
         }
     },
     methods: {
-
+        transitionForm() {
+            this.$router.push('/confirmEditForm')
+        },
     }
 }
 </script>
