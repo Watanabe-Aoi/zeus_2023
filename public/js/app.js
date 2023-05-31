@@ -2443,22 +2443,29 @@ __webpack_require__.r(__webpack_exports__);
     HeadContent: _HeadContent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     FootText: _FootText_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  props: {
+    books: []
+  },
   data: function data() {
     return {
-      bookcatalog: []
+      // lending_books: []
     };
   },
   mounted: function mounted() {
-    var _this = this;
-    axios__WEBPACK_IMPORTED_MODULE_3___default().get('/api/book_catalog').then(function (response) {
-      _this.bookcatalog = response.data.book_catalog;
-    });
+    // console.log(lending_books);
+    // axios.get('/api/book_catalog').then(response => {
+    //     this.lending_book = response.data.book_catalog;
+    // })
+    console.log(this.books);
   },
   methods: {
     returnBook: function returnBook() {
-      var _this2 = this;
-      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/bookcatalog', this.bookcatalog).then(function (response) {
-        _this2.bookcatalog = response.data.bookcatalog;
+      var _this = this;
+      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/return', {
+        column_name: 'book_id',
+        book_search: this.book_id
+      }).then(function (response) {
+        _this.book_catalog = response.data.book_catalog;
       });
     }
   }
@@ -2528,16 +2535,18 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    returnBook: function returnBook(lending_book) {
-      var _this2 = this;
-      axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/return', lending_book).then(function (response) {
-        _this2.lending_book = response.data.book_catalog;
+    returnBook: function returnBook(book_id) {
+      this.$router.push({
+        path: '/confirmReturnForm',
+        params: {
+          books: book_id
+        }
       });
     },
     deleteBook: function deleteBook(lending_book) {
-      var _this3 = this;
+      var _this2 = this;
       axios__WEBPACK_IMPORTED_MODULE_3___default().post('/api/book_catalog', lending_book).then(function (response) {
-        _this3.lending_books = response.data.book_catalog;
+        _this2.lending_books = response.data.book_catalog;
       });
     }
   }
@@ -3119,17 +3128,24 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "container"
-  }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("この図書の返却手続きをします")]), _vm._v(" "), _c("table", [_c("lendingList", {
-    attrs: {
-      lending_books: _vm.bookcatalog
-    }
-  }), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary"
-  }, [_vm._v("返却する")]), _vm._v(" "), _c("router-link", {
-    attrs: {
-      to: "listTakingoutResult"
-    }
-  }, [_vm._v("戻る")])], 1), _vm._v(" "), _c("FootText")], 1);
+  }, [_c("HeadContent"), _vm._v(" "), _c("h1", [_vm._v("この図書の返却手続きをします")]), _vm._v(" "), _vm._l(_vm.books, function (book) {
+    return _c("div", [_c("lendingList", {
+      attrs: {
+        lending_book: book
+      }
+    }), _vm._v(" "), _c("button", {
+      staticClass: "btn btn-primary",
+      on: {
+        click: function click($event) {
+          return _vm.returnBook(book.book_id);
+        }
+      }
+    }, [_vm._v("返却する")]), _vm._v(" "), _c("router-link", {
+      attrs: {
+        to: "listTakingoutResult"
+      }
+    }, [_vm._v("戻る")])], 1);
+  }), _vm._v(" "), _c("FootText")], 2);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -3196,7 +3212,7 @@ var render = function render() {
       staticClass: "btn btn-primary",
       on: {
         click: function click($event) {
-          return _vm.returnCheck(lending_book);
+          return _vm.returnBook(lending_book);
         }
       }
     }, [_vm._v("この本を返却する")]), _vm._v(" "), _c("button", {
@@ -3399,7 +3415,8 @@ var routes = [{
 }, {
   path: "/confirmReturnForm",
   component: _components_confirmReturnForm__WEBPACK_IMPORTED_MODULE_5__["default"],
-  name: "confirmReturnForm"
+  name: "confirmReturnForm",
+  props: true
 }, {
   path: "/returnSuccess",
   component: _components_returnSuccess__WEBPACK_IMPORTED_MODULE_6__["default"],

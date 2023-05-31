@@ -61,6 +61,7 @@ const routes = [
       path: "/confirmReturnForm",
       component: confirmReturnForm,
       name: "confirmReturnForm",
+      props: true,
    },
    {
       path: "/returnSuccess",

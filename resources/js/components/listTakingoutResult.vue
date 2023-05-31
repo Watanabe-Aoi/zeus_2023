@@ -5,7 +5,7 @@
         <div v-for="lending_book in lending_books">
             <lendingList :lending_book="lending_book" :key="lending_book.book_id"/>
             <button class="btn btn-primary" @click="deleteBook(lending_book)">削除</button>
-            <button class="btn btn-primary" @click="returnCheck(lending_book)">この本を返却する</button>
+            <button class="btn btn-primary" @click="returnBook(lending_book)">この本を返却する</button>
             <button class="btn btn-primary">編集</button>
         </div>
         <!-- <lendingList :lending_books="this.book_catalog"/> -->
@@ -49,10 +49,8 @@ export default {
     },
 
     methods: {
-        returnBook(lending_book) {
-            axios.post('/api/return', lending_book).then(response => {
-                this.lending_book = response.data.book_catalog;
-            })
+        returnBook(book_id) {
+            this.$router.push({path: '/confirmReturnForm', params: {books: book_id}});
         },
         deleteBook(lending_book) {
             axios.post('/api/book_catalog', lending_book).then(response => {
